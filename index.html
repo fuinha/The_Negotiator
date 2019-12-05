@@ -1,90 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Project Two: Car Dealer Insurnace</title>
-    <!-- css and boot strap --> 
-    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">  
-    	<!-- JQuery ajax-->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-   
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style.css">
+  <title>Welcome page test1</title>
 </head>
-<header>
-     <!--boot strap nav bar --> 
-     <nav class="navbar navbar-expand-lg navbar-light bg-info">
-        <div class="container">
-          <a class="navbar-brand" href="#">Your Dealer Insurnace Broker</a>
-        </div>
-      </nav>
-    
-    
-     <!--content container--> 
-     <div class="jumbotron">
-        <h1 class="display-4">Welcome to InsruaFinder</h1>
-        <form action="action_page.php" method="post">
-           
-             <!--logo div--> 
-            <div class="imgcontainer">
-         
-     <!--logo-->        
-              <img src="i" alt="logo" class="avatar">
-            </div>
-          
-              <!--username div--> 
-            <div class="container">
-                <div>
-              <label for="uname"><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" name="uname" required>
-            </div>
-            
-            <!-- password div--> 
-            <div>
-              <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required>
-            </div>
-            <!-- login div--> 
-            <div>
-              <button type="submit">Login</button>
-              <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-              </label>
-            </div>
-        </div>
-            <!-- cancel div--> 
-            <div class="container" style="background-color:#f1f1f1">
-              <button type="button" class="cancelbtn">Cancel</button>
-              <span class="psw">Forgot <a href="#">password?</a></span>
-            </div>
-          </form>
-        <hr class="my-4">
-        <p>New to InsruaFinder. Let's get to know each other.</p>
-        <p class="lead">
-          <a class="btn btn-primary btn-lg" href="#" role="button">Proceed to Introduction</a>
-        </p>
+<body>
+  <header>
+    <div class="row">
+      <div id="logo">
+        <img src="">
       </div>
-​
-                        <!-- foooter -->
-                        <div class="container">
+      <ul class="main-nav">
+        <li class="highlight"><a href="">HOME</a></li>
+        <li><a href="">CLIENT</a></li>
+        <li><a href="">COMPANY</a></li>
+        <li><a href="">BROKER</a></li>
+      </ul>
+    </div>
+  </header>
+  <div id="banner"><h1>Welcome to Insurance Company name</h1>
+    <p class="describe">where you can do all of these wonderful things with our app</p>
+  </div>
+  <div class="login-box">
+      <h2 id="login">Login</h2>
+      <div class="textbox">
+        <input type="text" placeholder="Username" name="" value="">
+      </div>
+      <div class="textbox">
+        <input type="password" placeholder="Password" name="" value="">
+      </div>
+        <!-- link to personal page -->
+      <input class="btn" type="button" name="" value="Login">
+      <!-- link to sign up -->
+      <input class="btn" href="signUp.html" type="button" name="" value="Sign Up">
+  </div>  
+    <!-- foooter -->
+    <div id="wrap">
+        ​
+    <div class="container">
                   
-                        </div>
-                      </div>
-                  
-                      <div id="footer" class="bg-success">
-                        <div class="container">
-                  <p>&copy;2019 Devon Martens</p>
-                        </div>
-                      </div>     
-​<!-- Javascript-->
-<!-- J
-<script type="text/javascript" src="assets/javascript/player.js"></script>
-<script type="text/javascript" src="assets/javascript/app2.js"></script> -->
-<script type="text/javascript" src="assets/javascript/app.js"></script>
-<!-- ticketmaster API link-->
-<script src="https://ticketmaster-api-staging.github.io/products-and-docs/widgets/event-discovery/1.0.0/lib/main-widget.js"></script>
-<!-- end of head-->
+    </div>
+  </div>
+
+  <div id="footer">
+    <div class="container">
+<p>&copy;2019 Devon Martens &copy;</p>
+    </div>
+  </div>     
+</body>
+</html>
 </body>
