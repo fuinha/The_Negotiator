@@ -1,24 +1,52 @@
-// Dependencies
-// =============================================================
+module.exports = function(sequelize, DataTypes) {
+  
+  var dealer = sequelize.define("dealer", {
+    
+    business_name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
 
+    address: {
+      type: DataTypes.STRING,
+      allowNull: false
+      },
 
-var Sequelize = require("sequelize");
+    owner: {
+      type: DataTypes.STRING,
+      allowNull: false
+      },
 
-var sequelize = require("../config/connection.js");
+    agent: {
+      type: DataTypes.STRING,
+      allowNull: false
+      },
 
-// Creates a model that matches up with DB
-var Insurance = sequelize.define("insurance", {
-  business_name: Sequelize.STRING,
-  address: Sequelize.STRING.BINARY,
-  owner: Sequelize.STRING,
-  dealer_agent:Sequelize.STRING,
-  phone_number:Sequelize.INT,
-  email:Sequelize.VARCHAR,
-  foreign_key:Sequelize.INT,
+    phone_number: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      },
 
-});
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+     }
+    
+  });
 
-// Syncs with DB
-Insurance.sync();
+  dealer.associate = function(models) {
+    
+    dealer.hasMany(models.Quotes, {
+      onDelete:"Cascade" 
+    });
+  };
 
-module.exports = Insurance;
+ dealer.associate = function(models) {
+   
+ dealer.hasMany(models.Application, {
+      onDelete:"Cascade" 
+    });
+  };
+
+  return dealer;
+};
