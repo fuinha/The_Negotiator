@@ -34,12 +34,6 @@ module.exports = function(sequelize, DataTypes) {
     
   });
 
-  dealer.associate = function(models) {
-    
-    dealer.hasMany(models.Quotes, {
-      onDelete:"Cascade" 
-    });
-  };
 
  dealer.associate = function(models) {
    
