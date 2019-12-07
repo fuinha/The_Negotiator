@@ -48,3 +48,9 @@ body {
 .news-card {
     margin-top: 10px;
 }
+.jumbotron {
+    margin-top: 50px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.603), rgba(0, 0, 0, 0.603)), url(../assets/images/people8_TOPCROP-2.png);
+    background-position: center;
+    background-size: cover;
+}
