@@ -2,6 +2,8 @@
 // =============================================================
 var path = require("path");
 
+// var isAuthenticated = require("../config/middleware/isAuthenticated");
+
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -15,6 +17,10 @@ module.exports = function(app) {
 
 
   app.get("/", function(req, res) {
+
+    // if(req.dealer){
+    //   res.redirect("/");
+    // }
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
@@ -26,7 +32,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "..public/commonpage.html"))
   });s
 
-  app.get("/profile", function(req, res) {
+  app.get("/profile", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "..public/profile.html"))
   })
 };
