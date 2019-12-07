@@ -6,43 +6,30 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-
     address: {
       type: DataTypes.STRING,
       allowNull: false
       },
-
     owner: {
       type: DataTypes.STRING,
       allowNull: false
       },  
-
     agent: {
       type: DataTypes.STRING,
       allowNull: false
       },
-
     phone_number: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: false
       },
-
     email: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
      }
-    
   });
 
-  dealer.associate = function(models) {
-    
-    dealer.hasMany(models.Quotes, {
-      onDelete:"Cascade" 
-    });
-  };
-
  dealer.associate = function(models) {
-   
+  
  dealer.hasMany(models.Application, {
       onDelete:"Cascade" 
     });
