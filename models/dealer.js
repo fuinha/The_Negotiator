@@ -15,7 +15,7 @@ module.exports = function(sequelize, DataTypes) {
     owner: {
       type: DataTypes.STRING,
       allowNull: false
-      },
+      },  
 
     agent: {
       type: DataTypes.STRING,
