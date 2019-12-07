@@ -36,25 +36,25 @@
         <h6>Please fill out the Business Registration Form Below</h6>
         <!-- Business Name-->
         <div class="form-group">
-          <label for="email">Business Name:</label>
-          <input type="email" class="form-control" placeholder="Enter email" id="email">
+          <label>Business Name:</label>
+          <input type="text" class="form-control" placeholder="Enter business name" id="name">
         </div>
           <!-- Address-->
         
         <div class="form-group">
-          <label for="pwd">Address (Please include zip code):</label>
-          <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+          <label>Address (Please include zip code):</label>
+          <input type="text" class="form-control" placeholder="Enter the businesses address" id="address">
         </div>
         <!-- Business owner full name-->
         <div class="form-group">
-                <label for="pwd">Business Owner Full Name:</label>
-                <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+                <label>Business Owner Full Name:</label>
+                <input type="text" class="form-control" placeholder="Enter business owners full name" id="owner">
               </div>
        
             <!-- Phone Number-->
         <div class="form-group">
-                <label for="pwd">Phone Number (Full 9 Didgets Please):</label>
-                <input type="password" class="form-control" placeholder="Enter password" id="pwd">
+                <label>Phone Number (Full 9 Didgets Please):</label>
+                <input type="text" class="form-control" placeholder="Enter phone number" id="phoneNumber">
               </div>
                 <!-- Email -->
         <div class="form-group">
@@ -64,14 +64,14 @@
      <!-- Dealer or Agent (add drop down)-->
      <div class="input-field col s12">
             <label>Please indicate which option describes your business best:</label>
-            <select id="question1">
+            <select id="businessType">
                 <option value="" disabled selected>Choose One</option>
-                <option value="1">Dealer</option>
-                <option value="2">Agent</option>
+                <option value="Dealer">Dealer</option>
+                <option value="Agent">Agent</option>
             </select>
         </div>
   <!-- Submit-->
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" id="appSubmit">Submit</button>
       </form>
     </div> 
 </div>
@@ -90,7 +90,8 @@
     <div class="container">
 <p>&copy;2019 Devon Martens &copy;</p>
     </div>
-  </div>     
+  </div>   
+  <script type="text/javascript" src="./assets/js/business.js/"></script>
 </body>
 </html>
 </body>
