@@ -30,9 +30,9 @@ module.exports = function(app) {
 
   app.get("/service", function(req,res) {
     res.sendFile(path.join(__dirname, "..public/commonpage.html"))
-  });s
+  });
 
-  app.get("/profile", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "..public/profile.html"))
-  })
+//   app.get("/profile", isAuthenticated, function(req, res) {
+//     res.sendFile(path.join(__dirname, "..public/profile.html"))
+//   })
 };
