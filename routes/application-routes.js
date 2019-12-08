@@ -23,14 +23,9 @@ module.exports = app => {
         }).then(dbApplication => {
             res.json(dbApplication)
         })
-    })
-<<<<<<< HEAD
-//put in business page
+    });
+    
     app.post("/api/applications", (req,res) => {
-=======
-
-    app.post("/api/applications", (req, res) => {
->>>>>>> f9f1aa13dab32961e45ca795328b2ec6ada0f91e
         db.Application.create(req.body, {
             dealerId: req.body.dealer_id
         }).then(dbApplication => {

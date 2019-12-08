@@ -18,9 +18,6 @@ module.exports = function(app) {
 
   app.get("/", function(req, res) {
 
-    // if(req.dealer){
-    //   res.redirect("/");
-    // }
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 

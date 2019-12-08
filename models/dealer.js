@@ -30,21 +30,14 @@ module.exports = function(sequelize, DataTypes) {
      }
   });
 
-  // dealer.prototype.validPassword = function(password) {
-  //   return bcrypt.compareSync(password, this.password);
-  // };
-
-  // dealer.addHook("beforeCreate", function(dealer) {
-  //   dealer.password = bcrypt.hashSync(dealer.password, bcrypt.genSaltSync(10), null);
-  // });
-
-
  dealer.associate = function(models) {
-  
  dealer.hasMany(models.Application, {
       onDelete:"Cascade" 
     });
   };
+dealer.associate = function(models) {
+  dealer.hasOne(models.User);
+};
 
   return dealer;
 };
