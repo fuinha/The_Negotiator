@@ -4,7 +4,7 @@ module.exports = app => {
 
     app.get("/api/contact", (req,res) => {
         db.dealer.findAll({
-            include : [db.Application]
+            include : [db.Application, db.User]
         }).then (dbdealer => {
             res.json(dbdealer);
         });
@@ -14,7 +14,7 @@ module.exports = app => {
         db.dealer.findOne({
             where : {
                 id : req.params.id
-            }, include : [db.Application]
+            }, include : [db.Application, db.User]
         }).then (dbdealer => {
             res.json(dbdealer);
         });

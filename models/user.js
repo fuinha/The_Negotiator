@@ -28,11 +28,14 @@ module.exports = function(sequelize, DataTypes) {
     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
   });
 
-  dealer.associate = function(models) {
-    dealer.hasOne(models.dealer);
+  User.associate = function(models) {
+    User.hasOne(models.dealer, {
+      foreignKey : {
+        allowNull : false
+      },
+      onDelete : "Cascade"
+    });
   };
 
   return User;
-
-
 };

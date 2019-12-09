@@ -12,6 +12,14 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
       },
+    state: {
+      type : DataTypes.STRING, 
+      allowNull: false
+    },
+    zip: {
+      type : DataTypes.INTEGER,
+      allowNull: false
+    },
     owner: {
       type: DataTypes.STRING,
       allowNull: false
@@ -34,9 +42,13 @@ module.exports = function(sequelize, DataTypes) {
  dealer.hasMany(models.Application, {
       onDelete:"Cascade" 
     });
-  };
-dealer.associate = function(models) {
-  dealer.hasOne(models.User);
+
+  dealer.belongsTo(models.User, {
+    foreignKey : {
+      allowNull : true
+    }, onDelete: "Cascade",
+    constraints: false
+  });
 };
 
   return dealer;
