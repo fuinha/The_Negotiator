@@ -20,6 +20,21 @@ $(document).ready(function(){
        return true; 
    } 
 } 
+$('#client').on('change',function() {
+    //var checked = $(this).is(':checked');
+    if(this.checked){
+
+//ajax call here for client page
+else 
+ {     $("#company").click(function () {
+                if  ($(this).is(":checked")) {
+                    $("#dvPassport").show();
+                } else {
+                    $("#dvPassport").hide();
+                }
+            });
+        });
+
      var signUpPage =  {
          email: email,
          password: password1 || password2,
