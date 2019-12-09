@@ -112,4 +112,7 @@ h1 {
     font-size: 24px;
 }
 
-#signUpSubmit
+.jumbotron {
+    font-family: 'Roboto', sans-serif
+}
+
