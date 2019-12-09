@@ -44,7 +44,7 @@ $(document).ready(function(){
      var numPlates = $("#numPlates").val();
      var lotProtection = $("#lotProtection").val();
     
-//change api route
+
 $.ajax ({
     url: "/api/application",
     type: "post",

@@ -20,7 +20,7 @@ $(document).ready(function(){
        return true; 
    } 
 } 
-$('#client').on('change',function() {
+$('#dropDown').on('change',function() {
     //var checked = $(this).is(':checked');
     if(this.checked){
 
