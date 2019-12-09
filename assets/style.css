@@ -102,7 +102,7 @@ h1 {
     text-align: center;
     padding: 10px 0px;
     color: #ffffff;
-      border-top: 10px solid #343a40;
+    background: grey;
 }
 .Business {
     height: 81%;
@@ -110,4 +110,10 @@ h1 {
 }
 .profile {
     font-size: 24px;
+}
+.userError {
+    color: white;
+}
+.passError {
+    color: white;
 }
