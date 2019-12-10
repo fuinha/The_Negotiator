@@ -46,7 +46,7 @@ $(document).ready(function(){
     
 
 $.ajax ({
-    url: "/api/application",
+    url: "/api/applications",
     type: "post",
     data: Application,
     dataType: 'json',

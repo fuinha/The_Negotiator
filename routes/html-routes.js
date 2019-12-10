@@ -25,11 +25,11 @@ module.exports = function(app) {
   });
 
   app.get("/application", function(req,res) {
-    res.sendFile(path.join(__dirname, "..public/application.html"))
+    res.sendFile(path.join(__dirname, "../public/application.html"))
   });
 
   app.get("/service", function(req,res) {
-    res.sendFile(path.join(__dirname, "..public/commonpage.html"))
+    res.sendFile(path.join(__dirname, "../public/commonpage.html"))
   });
 
 //   app.get("/profile", isAuthenticated, function(req, res) {
