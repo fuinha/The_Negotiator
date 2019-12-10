@@ -10,10 +10,8 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
   <!-- JQuery ajax-->
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
   <title>Register Business</title>
 </head>
 
@@ -54,8 +52,12 @@
             <label>Business Name:</label>
             <input type="text" class="form-control" placeholder="Enter business name" id="name">
           </div>
+          <!-- Business owner full name-->
+          <div class="form-group">
+            <label>Business Owner Full Name:</label>
+            <input type="text" class="form-control" placeholder="Enter business owners full name" id="owner">
+          </div>
           <!-- Address-->
-
           <div class="form-group">
             <label>Address:</label>
             <input type="text" class="form-control" placeholder="Enter the businesses address" id="address">
@@ -117,33 +119,28 @@
               <option value="WISCONSIN">Wisconsin</option>
               <option value="WYOMING">Wyoming</option>
             </select>
-          <!-- Zip-->
-          <div class="form-group">
-            <label>Zio Code: </label>
-            <input type="text" class="form-control" placeholder="Zip code" id="zip">
-          </div>
-          <!-- Business owner full name-->
-          <div class="form-group">
-            <label>Business Owner Full Name:</label>
-            <input type="text" class="form-control" placeholder="Enter business owners full name" id="owner">
-          </div>
-
-          <!-- Phone Number-->
-          <div class="form-group">
-            <label>Phone Number (Full 10 Didgets Please):</label>
-            <input type="text" class="form-control" placeholder="Enter phone number" id="phoneNumber">
-          </div>
-          <!-- Dealer or Agent (add drop down)-->
-          <div class="input-field col s12">
-            <label>Please indicate which option describes your business best:</label>
-            <select id="businessType">
-              <option value="" disabled selected>Choose One</option>
-              <option value="Dealer">Dealer</option>
-              <option value="Agent">Agent</option>
-            </select>
-          </div>
-          <!-- Submit-->
-          <button type="submit" class="btn btn-primary" id="appSubmit">Submit</button>
+            </div>
+            <!-- Zip-->
+            <div class="form-group">
+              <label>Zip Code: </label>
+              <input type="text" class="form-control" placeholder="Zip code" id="zip">
+            </div>
+            <!-- Phone Number-->
+            <div class="form-group">
+              <label>Phone Number (Full 10 Didgets Please):</label>
+              <input type="text" class="form-control" placeholder="Enter phone number" id="phoneNumber">
+            </div>
+            <!-- Dealer or Agent (add drop down)-->
+            <div class="input-field col s12">
+              <label>Please indicate which option describes your business best:</label>
+              <select id="businessType">
+                <option value="" disabled selected>Choose One</option>
+                <option value="Dealer">Dealer</option>
+                <option value="Agent">Agent</option>
+              </select>
+            </div>
+            <!-- Submit-->
+            <button type="submit" class="btn btn-primary" id="appSubmit">Submit</button>
         </form>
       </div>
     </div>
