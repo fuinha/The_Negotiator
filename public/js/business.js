@@ -35,7 +35,6 @@ $(document).ready(function () {
         userData(userTable, signUpInfo);
 
         function userData(userTable, signUpInfo) {
-            alert("You are inside the funx")
             $.post("/api/signup", userTable).then(data => {
             $.get("/api/user_data", alldata => {
                 var idVariable = alldata.id;
