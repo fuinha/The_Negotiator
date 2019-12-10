@@ -32,22 +32,14 @@ $(document).ready(function () {
             state: state, 
             zip: zip
         };
-        console.log(signUpInfo)
-        console.log(userTable)
         userData(userTable, signUpInfo);
 
         function userData(userTable, signUpInfo) {
             alert("You are inside the funx")
             $.post("/api/signup", userTable).then(data => {
-                console.log(data)
-            alert("You are inside post 1")
             $.get("/api/user_data", alldata => {
-                console.log(alldata)
-                alert(alldata.id)
                 var idVariable = alldata.id;
             $.post("/api/contact", signUpInfo).then(userdata => {
-                console.log(userdata)
-                alert("You are now in post 2")
                 window.location.replace("/member?id="+idVariable);
             });
         });
