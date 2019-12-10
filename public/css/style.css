@@ -63,7 +63,7 @@ h1 {
     padding: 13px 0;
     text-align: center;
 }
-.textbox {
+.textbox1 {
     width: 100%;
     overflow: hidden;
     font-size: 20px;
@@ -71,7 +71,7 @@ h1 {
     margin: 8px 0;
     border-bottom: 1px solid #f7c355;
 }
-.textbox input {
+.textbox1 input {
     border: none;
     outline: none;
     background: none;

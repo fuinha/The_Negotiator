@@ -12,24 +12,24 @@ module.exports = function(app) {
   // Each of the below routes ust handles the HTML page that the user gets sent to.
 
   // 
-  app.get("/application", function(req,res) {
-    res.sendFile(path.join(__dirname, "..public/application.html"))
+  app.get("/application", isAuthenticated, function(req,res) {
+    res.sendFile(path.join(__dirname, "../public/application.html"))
   });
 
-  app.get("/service", function(req,res) {
-    res.sendFile(path.join(__dirname, "..public/commonpage.html"))
+  app.get("/service", isAuthenticated, function(req,res) {
+    res.sendFile(path.join(__dirname, "../public/commonpage.html"))
   });
 
   app.get("/profile", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "..public/profile.html"))
+    res.sendFile(path.join(__dirname, "../public/profile.html"))
   })
 
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/member");
+      res.redirect("/member/:id");
     }
-    res.sendFile(path.join(__dirname, "../public/signUp.html"));
+    res.sendFile(path.join(__dirname, "../public/index1.html"));
   });
   
 
