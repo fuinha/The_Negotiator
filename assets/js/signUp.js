@@ -22,13 +22,13 @@ $(document).onclick(function(){
 
      var signUpPage =  {
          email: email,
-         password: password1 || password2,
+         password: password,
           client: client,
          company: company,
           broker: broker
      }
      var email = $("#email").val();
-     var password =$("#password1").val();
+     var password = $("#password1").val();
      var client = $("#client").val();
      var company = $("#company").val();
      var broker = $("#broker").val();
