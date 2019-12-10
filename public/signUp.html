@@ -49,16 +49,18 @@
                 <input type="password" class="form-control" placeholder="Enter password" id="password2">
               </div>
               <!-- checkbox-->
-                 <!-- Dealer or Agent (add drop down)-->
-     <div class="input-field bg-transparent p-2">
-      <label class="text-warning">Please what kind of account you are creating today:</label>
-      <select id="dropDown">
-          <option value="" disabled selected>Choose One</option>
-          <option value="1" id="1">Client</option>
-          <option value="2" id="2">Dealer/Agent</option>
-      </select>
-  </div>
-        </div>
+              <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="company" value="option1" checked>
+                  <label class="form-check-label text-warning" for="exampleRadios1">
+                    Agent/Dealer
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="exampleRadios" id="client" value="option2">
+                  <label class="form-check-label text-warning" for="exampleRadios2">
+                    Client
+                  </label>
+                </div>
         
         <button type="submit" class="btn btn-transparent text-warning border-light" id="signUpSubmit">Submit</button>
       </form>

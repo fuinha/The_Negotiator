@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).onclick(function(){
     $("#signUpSubmit").on("submit", function(event){
        event.preventDefault()
        // If password not entered 
@@ -19,21 +19,6 @@ $(document).ready(function(){
    else{ 
        return true; 
    } 
-} 
-$('#dropDown').on('change',function() {
-    //var checked = $(this).is(':checked');
-    if(this.checked){
-
-//ajax call here for client page
-else 
- {     $("#company").click(function () {
-                if  ($(this).is(":checked")) {
-                    $("#dvPassport").show();
-                } else {
-                    $("#dvPassport").hide();
-                }
-            });
-        });
 
      var signUpPage =  {
          email: email,
@@ -48,14 +33,14 @@ else
      var company = $("#company").val();
      var broker = $("#broker").val();
 
-$.ajax ({
-    url: "/api/dealer",
-    type: "post",
-    data: signUpPage,
-    dataType: 'json',
-    success: () => {
-    console.log(signUpInfo)
-}
-})     
-    })
- })
+     $.ajax ({
+        url: "/api/application",
+        type: "post",
+        data: Application,
+        dataType: 'json',
+        success: () => {
+        console.log(Application)
+    }
+    })     
+        })
+     })
