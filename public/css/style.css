@@ -4,7 +4,7 @@
 }
 body {
     font-family: 'Roboto', sans-serif;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.603), rgba(0, 0, 0, 0.603)), url(./images/iceland-car-rental.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.603), rgba(0, 0, 0, 0.603)), url(../images/iceland-car-rental.png);
     height: 100vh;
     background-size: cover;
     background-position: center;
