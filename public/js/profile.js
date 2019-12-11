@@ -21,6 +21,10 @@ $.get("/api/contact/" + id, data =>  {
     $('#businessLocation').html(location)
     $('#email').html(data.email)
     $('#phoneNumber').html(data.phone_number)
+    $("#car").attr("href", data.dealer_site)
+    $(".#twitter").attr("href", data.twitter)
+    $("#linkedin").attr("href", data.linkedin)
+    $("#facebook").attr("href", data.faceboook)
    })
   }
  
