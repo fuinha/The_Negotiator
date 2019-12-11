@@ -25,6 +25,8 @@ $.get("/api/contact/" + id, data =>  {
     $(".#twitter").attr("href", data.twitter)
     $("#linkedin").attr("href", data.linkedin)
     $("#facebook").attr("href", data.faceboook)
+    $("#img").attr("src", data.img)
+
    })
   }
  
