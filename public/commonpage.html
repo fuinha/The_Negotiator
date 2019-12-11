@@ -30,11 +30,17 @@
 })
 .then(function(data){
 console.log(data)
+var app = ""
+for (var i = 0 ;i < data.Applications.length;i++) {
+  app += data.Applications[i].name
+  $(".applications").append(app)
+}
+
 })
 //test when database is up
 //make ajax call then go to api -function that handles the response
 
 </script>
-
+<div class="applications"></div>
 </body>
 </html>
