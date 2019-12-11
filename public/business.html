@@ -33,38 +33,39 @@
   <!-- jumbotron-->
   <div class="d-flex justify-content-center">
 
-    <div class="jumbotron jumbotron-fluid Business">
+    <div class="jumbotron jumbotron-fluid Business bg-transparent">
       <div class="container">
         <form>
+            <h6 class="text-warning display-4">Login Creditials:</h6>
           <!-- Email -->
           <div class="form-group">
-            <label for="email">E-mail:</label>
+            <label for="email" class="text-warning">E-mail:</label>
             <input type="email" class="form-control" placeholder="Enter email" id="email">
           </div>
           <!-- Password -->
           <div class="form-group">
-            <label for="email">Password:</label>
+            <label for="email" class="text-warning">Password:</label>
             <input type="password" class="form-control" placeholder="Enter password" id="password">
           </div>
-          <h6>Please fill out the Business Registration Form Below</h6>
+          <h6 class="text-warning display-4">Business Registration:</h6>
           <!-- Business Name-->
           <div class="form-group">
-            <label>Business Name:</label>
+            <label class="text-warning">Business Name:</label>
             <input type="text" class="form-control" placeholder="Enter business name" id="name">
           </div>
           <!-- Business owner full name-->
           <div class="form-group">
-            <label>Business Owner Full Name:</label>
+            <label class="text-warning">Business Owner Full Name:</label>
             <input type="text" class="form-control" placeholder="Enter business owners full name" id="owner">
           </div>
           <!-- Address-->
           <div class="form-group">
-            <label>Address:</label>
+            <label class="text-warning">Address:</label>
             <input type="text" class="form-control" placeholder="Enter the businesses address" id="address">
           </div>
           <!-- State Dropdown -->
           <div class="input-field col s12">
-            <label>Please indicate which option describes your business best:</label>
+            <label class="text-warning">Please indicate which option describes your business best:</label>
             <select id="state">
               <option value="" disabled selected>Choose One</option>
               <option value="ALABAMA">Alabama</option>
@@ -122,17 +123,44 @@
             </div>
             <!-- Zip-->
             <div class="form-group">
-              <label>Zip Code: </label>
+              <label class="text-warning">Zip Code: </label>
               <input type="text" class="form-control" placeholder="Zip code" id="zip">
             </div>
             <!-- Phone Number-->
             <div class="form-group">
-              <label>Phone Number (Full 10 Didgets Please):</label>
+              <label class="text-warning">Phone Number (Full 10 Didgets Please):</label>
               <input type="text" class="form-control" placeholder="Enter phone number" id="phoneNumber">
             </div>
+            <!-- Enter photo URL-->
+            <div class="form-group">
+                <label class="text-warning">Enter the URL of a photo for your profile (optial):</label>
+                <input type="text" class="form-control" placeholder="Enter phone number" id="img">
+              </div>
+             <!-- business -->
+             <div class="form-group">
+                <label class="text-warning">Enter Full Url of your Employers Business (optional):</label>
+                <input type="text" class="form-control" placeholder="Enter Business Website" id="businessURL">
+              </div>
+              <!-- Twitter -->
+             <div class="form-group">
+                <label class="text-warning">Enter the Full URL of your Twitter Page (optional):</label>
+                <input type="text" class="form-control" placeholder="Enter the Full URL of your Twitter Page" id="twitterURL">
+              </div>
+              <!-- linkedin -->
+              <div class="form-group">
+                  <label class="text-warning">Enter Full LinkedIn URL (optional):</label>
+                  <input type="text" class="form-control" placeholder="Enter LinkedIn URL" id="linkedinURL">
+                </div>
+                <!-- facebook -->
+              <div class="form-group">
+                  <label class="text-warning">Enter the Full URL of a Facebook page you'd like to connect to your profile (optional):</label>
+                  <input type="text" class="form-control" placeholder="Enter Facebook URL" id="facebookURL">
+                </div>
+                
+              
             <!-- Dealer or Agent (add drop down)-->
             <div class="input-field col s12">
-              <label>Please indicate which option describes your business best:</label>
+              <label class="text-warning">Please indicate which option describes your business best:</label>
               <select id="businessType">
                 <option value="" disabled selected>Choose One</option>
                 <option value="Dealer">Dealer</option>

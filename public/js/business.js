@@ -8,10 +8,15 @@ $(document).ready(function () {
         var owner = $("#owner").val().trim();
         var phoneNumber = $("#phoneNumber").val().trim();
         var email = $("#email").val().trim();
-        var businessType = $("#businessType").val().trim();
+        var businessType = $("#businessType").val();
         var password = $("#password").val().trim();
-        var state = $("#state").val().trim();
+        var state = $("#state").val();
         var zip = $("#zip").val().trim();
+        var businessURL = $("#businessURL").val().trim();
+        var twitterURL = $("#twitterURL").val().trim();
+        var linkedinURL = $("#linkedinURL").val().trim();
+        var facebookURL = $("#facebookURL").val().trim();
+        var img = $("#img").val().trim();
 
         var userTable = {
             email: email,
@@ -30,7 +35,12 @@ $(document).ready(function () {
             phone_number: phoneNumber,
             email: email,
             state: state, 
-            zip: zip
+            zip: zip,
+            image : img,
+            dealer_site: businessURL,
+            twitter: twitterURL,
+            linkedin: linkedinURL,
+            facebook: facebookURL
         };
         userData(userTable, signUpInfo);
 

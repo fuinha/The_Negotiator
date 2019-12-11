@@ -35,6 +35,26 @@ module.exports = function(sequelize, DataTypes) {
     email: {
       type: DataTypes.STRING,
       allowNull: false
+     },
+     image: {
+      type : DataTypes.STRING, 
+      allowNull: true
+    },
+    dealer_site: {
+      type: DataTypes.STRING,
+      allowNull: true
+     },
+     twitter: {
+      type: DataTypes.STRING,
+      allowNull: true
+     },
+     linkedin: {
+      type: DataTypes.STRING,
+      allowNull: true
+     },
+     facebook: {
+      type: DataTypes.STRING,
+      allowNull: true
      }
   });
 
