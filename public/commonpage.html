@@ -21,6 +21,20 @@
                   </ul>
                 </div>
         </header>
-    
+
+
+ <script type="text/javascript">
+    $.ajax ({
+    url: "/api/applications",
+    type: "GET",
+})
+.then(function(data){
+console.log(data)
+})
+//test when database is up
+//make ajax call then go to api -function that handles the response
+
+</script>
+
 </body>
 </html>
