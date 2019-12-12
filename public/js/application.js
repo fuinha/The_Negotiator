@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+    console.log(window.history)
     var url = window.location.search;
     console.log(url)
     console.log(window.location.href)
@@ -34,7 +34,6 @@ $(".btn").on("click", function (event) {
     var worth = $("#worth").val().trim();
     var plates = $("#plates").val().trim();
     var security = $("#security").val();
-    var dealerId = id
 
     var postApp = {
         years_inBusiness: year_business,
@@ -55,13 +54,12 @@ $(".btn").on("click", function (event) {
         miles_driven: miles,
         num_lotCars: lot,
         lot_worth: worth,
-        num_plates: plates,
-        dealerId : dealerId
+        num_plates: plates
     }
     console.log(postApp);
 
-    $.post("/api/applications/:id", postApp).then(data => {
+    $.post("/api/applications", postApp).then(data => {
         alert("You made it")
-        window.location.replace("/service?="+id);
+        window.location.replace("/service");
     });
 });

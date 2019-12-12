@@ -44,12 +44,14 @@ $(document).ready(function () {
         };
         userData(userTable, signUpInfo);
 
+
+
         function userData(userTable, signUpInfo) {
             $.post("/api/signup", userTable).then(data => {
             $.get("/api/user_data", alldata => {
                 var idVariable = alldata.id;
             $.post("/api/contact", signUpInfo).then(userdata => {
-                window.location.replace("/member?id="+idVariable);
+                window.location.replace("/member");
             });
         });
             });

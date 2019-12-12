@@ -14,7 +14,7 @@ module.exports = function(router) {
 
   // 
   router.get("/application", isAuthenticated, function(req,res) {
-    console.log(req.params)
+    console.log(req.user)
     res.sendFile(path.join(__dirname, "../public/application2.html"))
   });
 
@@ -23,6 +23,7 @@ module.exports = function(router) {
   });
 
   router.get("/profile", isAuthenticated, function(req, res) {
+    console.log(req.user)
     res.sendFile(path.join(__dirname, "../public/profile.html"))
   })
 
