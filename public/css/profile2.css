@@ -65,7 +65,7 @@ h1 {
     font-size: 18px;
 }
   
-button {
+.button {
     border: none;
     outline: 0;
     display: inline-block;
@@ -102,4 +102,19 @@ img {
 #banner {
     background: rgb(90, 90, 90);
     padding-top: 30px;
+}
+#footer {
+    padding-top: 80px;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px 0px;
+    color: #ffffff;
+    background: grey;
+}
+.foot {
+    font-size: 12px;
 }

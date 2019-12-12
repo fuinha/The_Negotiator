@@ -4,7 +4,7 @@
 }
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(119, 112, 104);
+    background-color: rgb(199, 184, 164);
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -95,4 +95,19 @@ label {
     background-color: #9c7d3a;
     box-shadow: 0 5px rgb(197, 196, 196);
     transform: translateY(4px);
+}
+#footer {
+    padding-top: 80px;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px 0px;
+    color: #ffffff;
+    background: grey;
+}
+.foot {
+    font-size: 12px;
 }
