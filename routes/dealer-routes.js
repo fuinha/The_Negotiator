@@ -12,9 +12,10 @@ module.exports = router => {
     });
 
     router.get("/api/contact/:id", (req,res) => {
+        console.log(req.user)
         db.dealer.findOne({
             where : {
-                id : req.params.id
+                id : req.user.id
             }, include : [db.Application, db.User]
         }).then (dbdealer => {
             res.json(dbdealer);
@@ -32,7 +33,7 @@ module.exports = router => {
     router.put("/api/contact/:id", (req, res)=> {
         db.dealer.update(req.body, {
             where: {
-                id: req.params.id
+                id: req.user.id
             }
         }).then(dbdealer => {
             res.json(dbdealer);
@@ -42,7 +43,7 @@ module.exports = router => {
     router.delete("/api/contact/:id", (req,res) => {
         db.dealer.destroy({
             where: {
-                id: req.params.id
+                id: req.user.id
             }
         }).then(dbdealer => {
             res.json(dbdealer)
