@@ -12,6 +12,14 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
       },
+    state: {
+      type : DataTypes.STRING, 
+      allowNull: false
+    },
+    zip: {
+      type : DataTypes.INTEGER,
+      allowNull: false
+    },
     owner: {
       type: DataTypes.STRING,
       allowNull: false
@@ -27,24 +35,41 @@ module.exports = function(sequelize, DataTypes) {
     email: {
       type: DataTypes.STRING,
       allowNull: false
+     },
+     image: {
+      type : DataTypes.STRING, 
+      allowNull: true
+    },
+    dealer_site: {
+      type: DataTypes.STRING,
+      allowNull: true
+     },
+     twitter: {
+      type: DataTypes.STRING,
+      allowNull: true
+     },
+     linkedin: {
+      type: DataTypes.STRING,
+      allowNull: true
+     },
+     facebook: {
+      type: DataTypes.STRING,
+      allowNull: true
      }
   });
 
-  // dealer.prototype.validPassword = function(password) {
-  //   return bcrypt.compareSync(password, this.password);
-  // };
-
-  // dealer.addHook("beforeCreate", function(dealer) {
-  //   dealer.password = bcrypt.hashSync(dealer.password, bcrypt.genSaltSync(10), null);
-  // });
-
-
  dealer.associate = function(models) {
-  
  dealer.hasMany(models.Application, {
       onDelete:"Cascade" 
     });
-  };
+
+  dealer.belongsTo(models.User, {
+    foreignKey : {
+      allowNull : true
+    }, onDelete: "Cascade",
+    constraints: false
+  });
+};
 
   return dealer;
 };

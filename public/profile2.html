@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Gupter|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/profile2.css">
+    <link rel="stylesheet" href="./css/profile2.css">
     <title>Profile</title>
 </head>
 <body>
@@ -29,15 +29,16 @@
         <div class="card">
             <img src="https://d19m59y37dris4.cloudfront.net/university/1-1-1/img/teacher-4.jpg" alt="John" style="width:25%">
             <div id="banner">
-                <h1>Manuella Tarly</h1>
-                    <p class="title">Car Saleswoman</p>
-                    <p>Car Lot A, San Farcisco</p>
+                <h1 id="fullName">Manuella Tarly</h1>
+                    <p class="title" id="busninessName"></p>
+                    <p id="typeOfBusiness"></p>
+                    <p id="businessLocation">Car Lot A, San Farcisco</p>
             </div>
             <div class="info">
-                <h3>Years with company: 2</h3>
+                <h3 id="email">Years with company: 2</h3>
             </div>
             <div class="info">
-                <h3>Plan Chosen: Full Coverage</h3>
+                <h3 id="phoneNumber">Plan Chosen: Full Coverage</h3>
             </div>
             <br>
                 <a href="#"><i class="fa fa-car"></i></a>
@@ -46,6 +47,15 @@
                 <a href="#"><i class="fa fa-facebook"></i></a>
                 <p><button>Contact</button></p>
         </div>
+        <br>
+        <br>
+        <div id="buttonUser"><a id="newApp" href="" ><button id="makeApp">Make New Application</button></a></div>
+ 
+<script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+        <script type="text/javascript" src="./js/profile.js"></script>
 </body>
 <!--background: -webkit-linear-gradient(to right, #704e2e, #27150d);-->
 </html>

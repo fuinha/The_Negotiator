@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="../assets/style.css">  
-      <!-- JQuery ajax-->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <!-- JQuery ajax-->
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
   <title>Register Business</title>
 </head>
+
 <body>
-          <!-- nav bar -->
+  <!-- nav bar -->
   <header>
     <div class="row">
       <div id="logo">
@@ -26,71 +30,166 @@
       </ul>
     </div>
   </header>
-       <!-- jumbotron-->
-   <div class="d-flex justify-content-center">
+  <!-- jumbotron-->
+  <div class="d-flex justify-content-center">
 
-       <div class="jumbotron jumbotron-fluid Business">
-            <div class="container">
-    <form action="/action_page.php">
-        <h6>Please fill out the Business Registration Form Below</h6>
-        <!-- Business Name-->
-        <div class="form-group">
-          <label>Business Name:</label>
-          <input type="text" class="form-control" placeholder="Enter business name" id="name">
-        </div>
+    <div class="jumbotron jumbotron-fluid Business bg-transparent">
+      <div class="container">
+        <form>
+            <h6 class="text-warning display-4">Login Creditials:</h6>
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email" class="text-warning">E-mail:</label>
+            <input type="email" class="form-control" placeholder="Enter email" id="email">
+          </div>
+          <!-- Password -->
+          <div class="form-group">
+            <label for="email" class="text-warning">Password:</label>
+            <input type="password" class="form-control" placeholder="Enter password" id="password">
+          </div>
+          <h6 class="text-warning display-4">Business Registration:</h6>
+          <!-- Business Name-->
+          <div class="form-group">
+            <label class="text-warning">Business Name:</label>
+            <input type="text" class="form-control" placeholder="Enter business name" id="name">
+          </div>
+          <!-- Business owner full name-->
+          <div class="form-group">
+            <label class="text-warning">Business Owner Full Name:</label>
+            <input type="text" class="form-control" placeholder="Enter business owners full name" id="owner">
+          </div>
           <!-- Address-->
-        
-        <div class="form-group">
-          <label>Address (Please include zip code):</label>
-          <input type="text" class="form-control" placeholder="Enter the businesses address" id="address">
-        </div>
-        <!-- Business owner full name-->
-        <div class="form-group">
-                <label>Business Owner Full Name:</label>
-                <input type="text" class="form-control" placeholder="Enter business owners full name" id="owner">
-              </div>
-       
+          <div class="form-group">
+            <label class="text-warning">Address:</label>
+            <input type="text" class="form-control" placeholder="Enter the businesses address" id="address">
+          </div>
+          <!-- State Dropdown -->
+          <div class="input-field col s12">
+            <label class="text-warning">Please indicate which option describes your business best:</label>
+            <select id="state">
+              <option value="" disabled selected>Choose One</option>
+              <option value="ALABAMA">Alabama</option>
+              <option value="ALASKA">Alaska</option>
+              <option value="ARIZONA">Arizona</option>
+              <option value="ARKANSAS">Arkansas</option>
+              <option value="CALIFORNIA">California</option>
+              <option value="COLORADO">Colorado</option>
+              <option value="CONNETICUT">Conneticut</option>
+              <option value="DELAWARE">Delaware</option>
+              <option value="FLORIDA">Florida</option>
+              <option value="GEORGIA">Georgia</option>
+              <option value="HAWAII">Hawaii</option>
+              <option value="IDAHO">Idaho</option>
+              <option value="ILLINOIS">Illnois</option>
+              <option value="INDIANA">Indiana</option>
+              <option value="IOWA">Iowa</option>
+              <option value="KANSAS">Kansas</option>
+              <option value="KENTUCKY">Kentucky</option>
+              <option value="LOUSIANNA">Lousianna</option>
+              <option value="MAINE">Maine</option>
+              <option value="MARYLAND">Maryland</option>
+              <option value="MASSACHUSSETTS">Massachussetts</option>
+              <option value="MICHIGAN">Michigan</option>
+              <option value="MINNESOTA">Minnesota</option>
+              <option value="MISSISSIPPI">Mississippi</option>
+              <option value="MISSOURI">Missouri</option>
+              <option value="MONTANA">Montana</option>
+              <option value="NEBRASKA">Nebraska</option>
+              <option value="NEVADA">Nevada</option>
+              <option value="NEW HAMPSHIRE">New Hampshire</option>
+              <option value="NEW JERSEY">New Jersey</option>
+              <option value="NEW MEXICO">New Mexico</option>
+              <option value="NEW YORK">New York</option>
+              <option value="NORTH CAROLINA">North Carolina</option>
+              <option value="NORTH DAKOTA">North Dakota</option>
+              <option value="OHIO">Ohio</option>
+              <option value="OKLAHOMA">Oklahoma</option>
+              <option value="OREGON">Oregon</option>
+              <option value="PENNSYLVANIA">Pennsylvania</option>
+              <option value="RHODE ISLAND">Rhode Island</option>
+              <option value="SOUTH CAROLINA">South Carolina</option>
+              <option value="SOUTH DAKOTA">South Dakota</option>
+              <option value="TENNESSEE">Tennessee</option>
+              <option value="TEXAS">Texas</option>
+              <option value="UTAH">Utah</option>
+              <option value="VERMONT">Vermont</option>
+              <option value="VIRGINIA">Virginia</option>
+              <option value="WASHINGTON">Washington</option>
+              <option value="WASHINGTON DC">Washington D.C.</option>
+              <option value="WEST VIRGINIA">West Virginia</option>
+              <option value="WISCONSIN">Wisconsin</option>
+              <option value="WYOMING">Wyoming</option>
+            </select>
+            </div>
+            <!-- Zip-->
+            <div class="form-group">
+              <label class="text-warning">Zip Code: </label>
+              <input type="text" class="form-control" placeholder="Zip code" id="zip">
+            </div>
             <!-- Phone Number-->
-        <div class="form-group">
-                <label>Phone Number (Full 9 Didgets Please):</label>
-                <input type="text" class="form-control" placeholder="Enter phone number" id="phoneNumber">
+            <div class="form-group">
+              <label class="text-warning">Phone Number (Full 10 Didgets Please):</label>
+              <input type="text" class="form-control" placeholder="Enter phone number" id="phoneNumber">
+            </div>
+            <!-- Enter photo URL-->
+            <div class="form-group">
+                <label class="text-warning">Enter the URL of a photo for your profile (optial):</label>
+                <input type="text" class="form-control" placeholder="Enter phone number" id="img">
               </div>
-                <!-- Email -->
-        <div class="form-group">
-                <label for="email">E-mail:</label>
-                <input type="email" class="form-control" placeholder="Enter email" id="email">
+             <!-- business -->
+             <div class="form-group">
+                <label class="text-warning">Enter Full Url of your Employers Business (optional):</label>
+                <input type="text" class="form-control" placeholder="Enter Business Website" id="businessURL">
               </div>
-     <!-- Dealer or Agent (add drop down)-->
-     <div class="input-field col s12">
-            <label>Please indicate which option describes your business best:</label>
-            <select id="businessType">
+              <!-- Twitter -->
+             <div class="form-group">
+                <label class="text-warning">Enter the Full URL of your Twitter Page (optional):</label>
+                <input type="text" class="form-control" placeholder="Enter the Full URL of your Twitter Page" id="twitterURL">
+              </div>
+              <!-- linkedin -->
+              <div class="form-group">
+                  <label class="text-warning">Enter Full LinkedIn URL (optional):</label>
+                  <input type="text" class="form-control" placeholder="Enter LinkedIn URL" id="linkedinURL">
+                </div>
+                <!-- facebook -->
+              <div class="form-group">
+                  <label class="text-warning">Enter the Full URL of a Facebook page you'd like to connect to your profile (optional):</label>
+                  <input type="text" class="form-control" placeholder="Enter Facebook URL" id="facebookURL">
+                </div>
+                
+              
+            <!-- Dealer or Agent (add drop down)-->
+            <div class="input-field col s12">
+              <label class="text-warning">Please indicate which option describes your business best:</label>
+              <select id="businessType">
                 <option value="" disabled selected>Choose One</option>
                 <option value="Dealer">Dealer</option>
                 <option value="Agent">Agent</option>
-            </select>
-        </div>
-  <!-- Submit-->
-        <button type="submit" class="btn btn-primary" id="appSubmit">Submit</button>
-      </form>
-    </div> 
-</div>
-</div>
-    <!-- end jumbotron -->
+              </select>
+            </div>
+            <!-- Submit-->
+            <button type="submit" class="btn btn-primary" id="appSubmit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- end jumbotron -->
 
-    <!-- foooter -->
-    <div id="wrap">
-        ​
+  <!-- foooter -->
+  <div id="wrap">
+    ​
     <div class="container">
-                  
+
     </div>
   </div>
 
   <div id="footer">
     <div class="container">
-<p>&copy;2019 Devon Martens &copy;</p>
+      <p>&copy;2019 Devon Martens &copy;</p>
     </div>
-  </div>   
-  <script type="text/javascript" src="./assets/js/business.js/"></script>
+  </div>
+  <script src="./js/business.js"></script>
 </body>
+
 </html>
 </body>
