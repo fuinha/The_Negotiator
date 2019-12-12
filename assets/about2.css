@@ -28,6 +28,10 @@ body {
 .main-nav li a:hover {
     border: 1px solid;
 }
+.r2 {
+    max-width: 1200px;
+    margin: auto;
+}
 .navigation {
     max-width: 1200px;
     margin: auto;
@@ -104,4 +108,13 @@ body {
 }
 .foot {
     font-size: 12px;
+}
+.contact {
+    margin-top: 10px;
+    border: #ffd64e solid 2px;
+
+}
+#btn {
+    background-color: goldenrod;
+    padding: 15px 20px;
 }
