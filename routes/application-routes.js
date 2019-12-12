@@ -15,7 +15,7 @@ module.exports = app => {
         });
     });
 
-    app.get("/api/applications", (req,res) => {
+    app.get("/api/applications/:id", (req,res) => {
         console.log("You are looking at indiv. app.")
         console.log(req.user)
         db.Application.findOne({

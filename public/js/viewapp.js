@@ -9,7 +9,7 @@ $(document).ready(function(event) {
   });
 
   function getid(id){
-      $.get("/api/viewApp/"+id, data =>{
+      $.get("/api/applications/"+id, data =>{
           console.log(data)
           var furnished;
           if(data.furnished){
@@ -32,27 +32,27 @@ $(document).ready(function(event) {
                         "<br>"+
                         "</div>"+
                         "<br><br><div class='businessInfo'><h4 style='text-align:center;'>Business Information</h4><hr><br>"+
-                        data.previous_insuranceName+"<br>"+
-                        data.previous_insuranceYears+"<br>"+
-                        data.previous_insuranceClaims+"<br>"+
-                        data.business_nature+
+                        "Previous Insurance Company: "+data.previous_insuranceName+"<br>"+
+                        "Years with Previous Insurance Company: "+data.previous_insuranceYears+"<br>"+
+                        "Previous claims: "+data.previous_insuranceClaims+"<br>"+
+                        "Nature of Business"+ data.business_nature+
                         
                         "</div>"+
                         "<br><br><div class='employeeInfo'><h4 style='text-align:center;'>Employee Information</h4><hr><br>"+
-                        data.dealer.owner+"<br><br>"+
-                        data.dob_employees+"<br>"+
-                        data.drivers_license+"<br>"+
-                        furnished+"<br>"+
-                        accidents+"<br>"+
-                        data.num_employees+"<br>"+
+                        "Owner Name: "+data.dealer.owner+"<br><br>"+
+                        "Date of Birth: "+data.dob_employees+"<br>"+
+                        "Driver's License No.: "+data.drivers_license+"<br>"+
+                        "Furnished: "+furnished+"<br>"+
+                        "Accidents in Past 3 Years: "+accidents+"<br>"+
+                        "No. Employees: "+data.num_employees+"<br>"+
                         "</div>"+
                         "<br><br><div class='insuranceInfo'><h4 style='text-align:center;'>Insurance Information</h4><hr><br>"+
-                        data.insurance_type+"<br>"+
-                        data.miles_driven+"<br>"+
-                        data.num_plates+"<br>"+
-                        data.num_lotCars+"<br>"+
-                        data.lot_worth+"<br>"+
-                        data.lot_protection+
+                        "Quote Request: "+data.insurance_type+"<br>"+
+                        "Mileage Cars Driven: "+data.miles_driven+"<br>"+
+                        "No. of Plates: "+data.num_plates+"<br>"+
+                        "No. of Cars on the Lot: "+data.num_lotCars+"<br>"+
+                        "Worth of Lot:" +data.lot_worth+"<br>"+
+                        "Description Lot Protection: "+data.lot_protection+
                         "<hr></div>"
     
         $(".appBody").append(newDiv)
