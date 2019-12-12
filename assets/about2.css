@@ -52,7 +52,7 @@ body {
 .news-card {
     margin-top: 10px;
 }
-.jumbotron {
+#imageJumbotron {
     margin-top: 50px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.692), rgba(0, 0, 0, 0.692)), url(../assets/images/people8_TOPCROP-2.png);
     background-position: center;
@@ -69,35 +69,39 @@ body {
     font-size: 14px;
 }
 .col-sm-5 {
-    background-color: burlywood;
+    background-color: rgb(224, 224, 224);
 }
 .col-lg-7 {
-    background-color: cornflowerblue;
+    background-color: rgb(224, 224, 224);
 }
-.info {
-    background-color: cornsilk;
+.col {
+    height: 500px;
 }
-.wrapper {
-    position: absolute;
-    top: 10%;
-    right: 50%;
-    padding: 15px;
-    border-radius: 5px;
-    display: flex;
-    float: right;
+
+.news {
+    margin-top: 20px;
 }
-.wrapper .input {
-    width: 180px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
+.card-title {
+    border-bottom: solid black 1px;
 }
-.search-btn {
-    background: #d3af61;
-    width: fit-content;
-    border-radius: 5px;
-    position: relative;
-    cursor: pointer;
-    margin-left: 10px;
+.my-md-0 {
+    background-color: black;
+}
+.btn-outline-success {
+    background-color: rgb(255, 255, 255);
+}
+#footer {
+    padding-top: 80px;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px 0px;
+    color: #ffffff;
+    background: grey;
+}
+.foot {
+    font-size: 12px;
 }
