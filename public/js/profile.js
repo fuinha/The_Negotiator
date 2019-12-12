@@ -1,29 +1,33 @@
 $(document).ready(function(event) {
 
   var url = window.location.search;
-console.log(url)
-console.log(window.location.href)
 
 if (url.indexOf("?id=") !== -1) {
   id = url.split("=")[1];
-  console.log(id)
   getid(id);
 }
 });
 
 function getid(id) {
-$.get("/api/contact/" + id, data =>  {
-    console.log(data)
-    var location = (data.state + ' , ' + data.zip)
-    $('#fullName').html(data.owner)
-    $('#busninessName').html(data.business_name)
-    $('#typeOfBusiness').html(data.agent)
-    $('#businessLocation').html(location)
-    $('#email').html(data.email)
-    $('#phoneNumber').html(data.phone_number)
+  $.get("/api/contact/" + id, data =>  {
+    if (id == data.id) {
+      $("#buttonUser").show();
+      $("#makeApp").attr("data-id", data.id)
+      $("#newApp").attr("href", "/application?dealer="+data.id)
+    } 
+    
+  var location = (data.state + ' , ' + data.zip)
+  $('#fullName').html(data.owner)
+  $('#busninessName').html(data.business_name)
+  $('#typeOfBusiness').html(data.agent)
+  $('#businessLocation').html(location)
+  $('#email').html(data.email)
+  $('#phoneNumber').html(data.phone_number)
+  
+    
+
    })
   }
- 
 
 // Applications: []
 // User: null
