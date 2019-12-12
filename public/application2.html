@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/application2.css">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="./css/application2.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
     <title>Application</title>
 </head>
 <body>
@@ -26,40 +29,99 @@
                 <p class="describe">Dealer Application</p>
               </div>
               <div class="app-box">
-                    <form action="/" method="post" id="form-app">
+                    <form id="form-app">
                         <div id="f1">
+                            <label>Years in Business:</label><br>
+                            <input type="number" name="yearsInBusiness" placeholder="Number of Years" class="field" id="year_business"><br><br>
+                            <label>Years Dealership in Operation:</label><br>
+                            <input type="number" name="yearsOfDealership" placeholder="Number of Years" class="field" id="yearDealer"><br><br>
+                            <label>Additional Address</label><br>
+                            <input type="text" name="address" min="0" placeholder="Enter Number" class="field" id="address"><br><br>
+                            <p class="addresses"></p><br>                          
+                            <label>Previous Insurance Company Name:</label><br>
+                            <input type="text" name="previous-name" placeholder="Name of Insurance Company" class="field" id="prev_names"><br><br>
+                            <label>Years of Previous Insurance:</label><br>
+                            <input type="text" name="previous-name" placeholder="YEAR-YEAR" class="field" id="prev_years"><br><br>
+                            <label>Previous claims (If yes, please provide claim reason):</label><br>
+                            <input type="text" name="previous-name" placeholder="" class="field" max="150" id="claims"><br><br>
+                            
                                 <label>Type of Insurance:</label><br>
-                                <input type="text" name="Type of Insurance" placeholder="" class="field"><br><br>
-                                <label>Mileage:</label><br>
-                                <input type="text" name="Mileage" placeholder="" class="field"><br><br>
-                                <label>Plate Number:</label><br>
-                                <input type="text" name="PlateNumber" placeholder="" class="field"><br><br>
-                                <label>Lot Security:</label><br>
-                                <input type="text" name="LotSecurity" placeholder="" class="field"><br><br>
-                                <label>Size of The Lot:</label><br>
-                                <input type="text" name="LotSize" placeholder="" class="field"><br><br>
-                                <label>Car's Value</label><br>
-                                <input type="text" name="CarValue" placeholder="" class="field"><br><br>
+                                <select id="insurance">
+                                    <option value="" disabled selected></option>
+                                    <option class="type1" value="Basic Garage Insurance">Basic Garage Insurance</option>
+                                    <option class="type2" value="Full Coverage">Full Coverage</option>
+                                    <option class="type3" value="Garage Keeper's Liability">Garage Keeper's Liability Insurance</option>
+                                    <option class="type4" value="Unisured">Basic Garage + Uninsured</option>
+                                    <option class="type5" value="Underinsured">Basic Garage + Underinsured</option>
+                                  </select><br><br>
+                                <!-- <input type="text" name="Type of Insurance" placeholder="" class="field"><br><br> -->
+                                <label>Mileage Cars are Driven to Lot:</label><br>
+                                <select id="miles">
+                                    <option value=""></option>
+                                    <option class="type1" value="Within 200 Miles">Within 200 Miles</option>
+                                    <option class="type2" value="Further than 200 Miles">Further than 200 Miles</option>
+                                  </select><br><br>
+                                <!-- <input type="text" name="Mileage" placeholder="" class="field"><br><br> -->
+                                <label>Number of Plates:</label><br>
+                                <input type="number" name="PlateNumber" placeholder="" min="0" max="8" class="field" id="plates"><br><br>
+                                <label>Clarify Lot Security/Location of Cars on Lot:</label><br>
+                                <select id="security">
+                                    <option value="" disabled selected></option>
+                                    <option class="sec1" value="Wood or Metal Fencing Around Lot">Wood or Metal Fencing Around Lot</option>
+                                    <option class="sec2" value="Inside Building and/or Garage">Inside Building and/or Garage</option>
+                                    <option class="sec3" value="Chain-Linked Fence">Chain-Linked Fence</option>
+                                    <option class="sec4" value="Open Lot">Open Lot</option>
+                                  </select><br><br>
+                                <label>Number Cars on Lot:</label><br>
+                                <input type="number" name="LotSize" placeholder="Number of Cars on Lot" class="field" id="lot"><br><br>
+                                <label>Worth of all Cars on Lot:</label><br>
+                                <input type="text" name="CarValue" placeholder="Value of Cars on Lot" class="field" id="worth"><br><br>
                         </div>
                         <div id="f2">
-                                <label>Driver's License:</label><br>
-                                <input type="text" name="DriversLicense" placeholder="" class="field"><br><br>
-                                <label>Date of Birth:</label><br>
-                                <input type="date" name="DateofBirth" placeholder="" class="field"><br><br>
-                                <label>Lifespan of Dealership:</label><br>
-                                <input type="number" name="LifeSpanofDealership" placeholder="" class="field"><br><br>
-                                <label>Number of Employees:</label><br>
-                                <input type="number" name="NumberofEmployees" placeholder="" class="field"><br><br>
-                                <label>Number of Accidents:</label><br>
-                                <input type="number" name="NumberofAccidents" placeholder="" class="field"><br><br>
-                                <label>City and State:</label><br>
-                                <input type="text" name="CityState" placeholder="" class="field"><br><br>
+                            <label>Nature of Business:</label><br>
+                            <select id="business_type">
+                                <option value="" disabled selected></option>
+                                <option value="100% Car Sales">100% Car Sales</option>
+                                <option value="75% Car Sales and 25% Repair">75% Car Sales and 25% Repair</option>
+                                <option value="50% Car Sales and 50% Repair">50% Car Sales and 50% Repair</option>
+                                <option value="25% Car Sales and 75% Repair">25% Car Sales and 75% Repair</option>
+                                <option value="100% Repair">100% Repair</option>
+                              </select><br><br>
+                          <label>Number of Employees:</label><br>
+                          <input type="number" min="1" name="NumberofEmployees" placeholder="" class="field" id="employee"><br><br>
+                          <label>Driver's License:</label><br>
+                          <input type="text" name="DriversLicense" placeholder="" class="field" id="license"><br><br>
+                          <label>Full-Time or Part-Time Employee:</label><br>
+                          <select id="time">
+                              <option value="" disabled selected></option>
+                              <option value="Part-Time">Part-Time</option>
+                              <option value="Full-Time">Full-Time</option>
+                            </select><br><br>
+                          <label>Date of Birth:</label><br>
+                          <input type="date" name="DateofBirth" placeholder="" class="field" id="dob"><br><br>
+                          <label>Drive Cars for Personal Use:</label><br>
+                          <select id="furnished">
+                              <option value="" disabled selected></option>
+                              <option value="true">yes</option>
+                              <option value="false">no</option>
+                            </select><br><br>
+                          <label>Accidents within 3 Years:</label><br>
+                          <select id="accidents">
+                              <option value="" disabled selected></option>
+                              <option value="true">yes</option>
+                              <option value="false">no</option>
+                            </select><br><br>
                         </div>
-                        <input type="submit" value="Submit" class="btn" name="">
+                        <input type="submit" value="Submit" class="btn">
                     </form>
             </div>
+<<<<<<< HEAD
     <div id="footer">
             <p class="foot">The Negotiator Group</p>
     </div>
 
 </body>
+=======
+          <script src="./js/application.js"></script>
+</body>
+>>>>>>> ee0fe08d563e79729d67697bccc13d2222b1dd87

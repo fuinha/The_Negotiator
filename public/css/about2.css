@@ -33,7 +33,7 @@ body {
     margin: auto;
 }
 .about {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.603), rgba(0, 0, 0, 0.603)), url(../assets/images/people8_TOPCROP-2.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.603), rgba(0, 0, 0, 0.603)), url(../img/people8_TOPCROP-2.png);
     background-size: cover;
     background-position: center;
     margin-top: 50px;
@@ -54,7 +54,11 @@ body {
 }
 #imageJumbotron {
     margin-top: 50px;
+<<<<<<< HEAD:public/css/about2.css
+    background-image: linear-gradient(rgba(0, 0, 0, 0.603), rgba(0, 0, 0, 0.603)), url(../img/people8_TOPCROP-2.png);
+=======
     background-image: linear-gradient(rgba(0, 0, 0, 0.692), rgba(0, 0, 0, 0.692)), url(../assets/images/people8_TOPCROP-2.png);
+>>>>>>> e47e913fd64b0db1d33cad778771a14d1bb07d2c:assets/about2.css
     background-position: center;
     background-size: cover;
     font-family: 'Gelasio', serif;

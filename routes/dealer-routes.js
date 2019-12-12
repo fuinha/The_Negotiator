@@ -1,26 +1,28 @@
 var db = require("../models");
+var express = require("express")
+// var router = require(express.Router())
+module.exports = router => {
 
-module.exports = app => {
-
-    app.get("/api/contact", (req,res) => {
+    router.get("/api/contact", (req,res) => {
         db.dealer.findAll({
-            include : [db.Application]
+            include : [db.Application, db.User]
         }).then (dbdealer => {
             res.json(dbdealer);
         });
     });
 
-    app.get("/api/contact/:id", (req,res) => {
+    router.get("/api/contact/:id", (req,res) => {
+        console.log(req.user)
         db.dealer.findOne({
             where : {
-                id : req.params.id
-            }, include : [db.Application]
+                id : req.user.id
+            }, include : [db.Application, db.User]
         }).then (dbdealer => {
             res.json(dbdealer);
         });
     });
 
-    app.post("/api/contact", (req, res) => {
+    router.post("/api/contact", (req, res) => {
         console.log(req.body)
         db.dealer.create(req.body).then(dbdealer => {
             console.log(dbdealer)
@@ -28,20 +30,20 @@ module.exports = app => {
         });
     });
 
-    app.put("/api/contact/:id", (req, res)=> {
+    router.put("/api/contact/:id", (req, res)=> {
         db.dealer.update(req.body, {
             where: {
-                id: req.params.id
+                id: req.user.id
             }
         }).then(dbdealer => {
             res.json(dbdealer);
         });
     });
 
-    app.delete("/api/contact/:id", (req,res) => {
+    router.delete("/api/contact/:id", (req,res) => {
         db.dealer.destroy({
             where: {
-                id: req.params.id
+                id: req.user.id
             }
         }).then(dbdealer => {
             res.json(dbdealer)
