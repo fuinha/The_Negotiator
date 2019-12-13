@@ -23,8 +23,10 @@ module.exports = function(app) {
       })
       .catch(function(err) {
         res.status(401).json(err);
+        console.log("error")
       });
   });
+
 
   // Route for logging user out
   app.get("/logout", function(req, res) {

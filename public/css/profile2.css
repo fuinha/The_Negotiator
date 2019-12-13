@@ -50,7 +50,7 @@ body {
     width: 500px;
     height: fit-content;
     margin-top: 50px;
-    margin-left: 500px;
+    margin-left: 35%;
     text-align: center;
     background-color: rgb(235, 235, 235);
 
@@ -102,6 +102,25 @@ img {
 #banner {
     background: rgb(90, 90, 90);
     padding-top: 30px;
+}
+.hide {
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+}
+.apps {
+    background-color: blanchedalmond;
+    color: black;
+    width: 300px;
+    display: flex;
+    text-align: center;
+    border: 2px solid rgb(65, 31, 31);
+    padding:10px 10px 10px 10px;
+    margin-left: 30%;
+    margin-top: 50px;
+}
+.popApp{
+    font: 10px;
 }
 #footer {
     padding-top: 80px;

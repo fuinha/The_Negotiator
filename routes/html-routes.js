@@ -2,7 +2,6 @@
 // =============================================================
 var express = require("express")
 var path = require("path");
-var router = express.Router();
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
@@ -31,7 +30,11 @@ module.exports = function(router) {
     res.sendFile(path.join(__dirname, "../public/individualApp.html"))
   })
 
+  router.get("/about_us", function(req,res){
+    res.sendFile(path.join(__dirname, "../public/about2.html"))
+  })
 
+  //login page
   router.get("/", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
@@ -40,7 +43,7 @@ module.exports = function(router) {
     res.sendFile(path.join(__dirname, "../public/index1.html"));
   });
   
-
+  //signup page
   router.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
