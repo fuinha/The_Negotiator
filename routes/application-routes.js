@@ -1,6 +1,7 @@
+//requiring dependencies
 var db = require("../models");
-var express = require("express");
-// var app = express.Router();
+
+//get all applications
 module.exports = app => {
     app.get("/api/applications", (req, res) => {
         var query = {};
@@ -15,6 +16,7 @@ module.exports = app => {
         });
     });
 
+    //get application by application id
     app.get("/api/applications/:id", (req,res) => {
         console.log("You are looking at indiv. app.")
         console.log(req.user)
@@ -29,10 +31,10 @@ module.exports = app => {
         });
     });
     
+    //post applications
     app.post("/api/applications", (req,res) => {
-        console.log("You are posting app")
-        console.log(req.user)
-        console.log(req.body)
+
+        //created object to insert passport id into dealerId field 
         db.Application.create({
             additional_addresses: req.body.additional_addresses,
             businessOpen_years: req.body.businessOpen_years,
@@ -57,21 +59,26 @@ module.exports = app => {
             res.json(dbApplication);
         });
 
+        //allows update function for member of id
         app.put("/api/applications/:id", (req, res) => {
             db.Application.update(
                 req.body, {
-                where: { id: req.body.id,
-                userId: req.user.id }
+                where: { id: req.params.id,
+                dealerId: req.user.id }
             }).then(dbApplication => {
+                console.log("Here we go")
                 res.json(dbApplication);
             });
         });
+
+        
+        //allows only member of id to delete the form
         app.delete("/api/applications/:id", (req, res) => {
             db.Application.destroy({
                 where: {
-                    id: req.params.id,
-                    userId: req.user.id
-                }
+                    dealerId: req.user.id,
+                    id: req.params.id
+                  }
             }).then(dbApplication => {
                 res.json(dbApplication)
             });
