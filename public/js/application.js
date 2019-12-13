@@ -59,7 +59,6 @@ $(".btn").on("click", function (event) {
     console.log(postApp);
 
     $.post("/api/applications", postApp).then(data => {
-        alert("You made it")
         window.location.replace("/service");
     });
 });

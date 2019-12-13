@@ -21,7 +21,7 @@ function getid(id) {
   $('#businessLocation').html(location)
   $('#email').html(data.email)
   $('#phoneNumber').html(data.phone_number)
-  
+  console.log(data)
     
 
    })

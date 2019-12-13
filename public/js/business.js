@@ -26,6 +26,9 @@ $(document).ready(function () {
         if (!userTable.email || !userTable.password) {
             return;
         };
+        
+        if (name == "" || address == "" || owner == "" || businessType == ""|| state== "" || email  == "" || zip== ""){
+            $("#p").html("Error: form is missing a field")}
 
         var signUpInfo = {
             business_name: name,
@@ -49,7 +52,6 @@ $(document).ready(function () {
         function userData(userTable, signUpInfo) {
             $.post("/api/signup", userTable).then(data => {
             $.get("/api/user_data", alldata => {
-                var idVariable = alldata.id;
             $.post("/api/contact", signUpInfo).then(userdata => {
                 window.location.replace("/member");
             });

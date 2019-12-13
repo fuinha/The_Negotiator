@@ -1,7 +1,7 @@
 $(document).ready(function(event) {
 
     var url = window.location.search;
-  
+  console.log(window)
   if (url.indexOf("?id=") !== -1) {
     id = url.split("=")[1];
     getid(id);
@@ -56,6 +56,10 @@ $(document).ready(function(event) {
                         "<hr></div>"
     
         $(".appBody").append(newDiv)
+
+        if (data.dealerId){
+
+        }
         
       })
   }
