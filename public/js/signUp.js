@@ -1,18 +1,18 @@
 $(document).ready(function() {
    // Getting references to our form and inputs
    var loginForm = $("form.login");
-   var emailInput = $("input#email-input").val().trim();
-   var passwordInput = $("input#password-input").val().trim();
+   var emailInput = $("input#email-input");
+   var passwordInput = $("input#password-input");
  
    // When the form is submitted, we validate there's an email and password entered
    loginForm.on("submit", function(event) {
      event.preventDefault();
      var userData = {
-       email: emailInput,
-       password: passwordInput,
+       email: emailInput.val().trim(),
+       password: passwordInput.val().trim(),
      };
 
-     if (emailInput == "" || passwordInput == "") 
+     if (emailInput.val().trim() == "" || passwordInput.val().trim() == "") 
      {
       $("#p1").html("Error: form is missing a field")
     }

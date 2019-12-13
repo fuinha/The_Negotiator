@@ -4,7 +4,7 @@ var db = require("../models");
 module.exports = router => {
 
     //get all contacts
-    router.get("/api/contact", (req,res) => {
+    router.get("/api/quote", (req,res) => {
         db.dealer.findAll({
             include : [db.Application, db.User]
         }).then (dbdealer => {
