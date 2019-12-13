@@ -48,3 +48,12 @@ body {
     width: 310px;
     height:210px;
 }
+.btnHome {
+    float:right;
+    margin-right: 200px;
+    margin-bottom: 50px;
+}
+.btnApp {
+    margin:30px;
+    font-size: larger;
+}

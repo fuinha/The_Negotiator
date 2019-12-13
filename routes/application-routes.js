@@ -18,6 +18,7 @@ module.exports = app => {
     app.get("/api/applications/:id", (req,res) => {
         console.log("You are looking at indiv. app.")
         console.log(req.user)
+        console.log(req)
         db.Application.findOne({
 
             where : {
@@ -59,7 +60,8 @@ module.exports = app => {
         app.put("/api/applications/:id", (req, res) => {
             db.Application.update(
                 req.body, {
-                where: { id: req.body.id }
+                where: { id: req.body.id,
+                userId: req.user.id }
             }).then(dbApplication => {
                 res.json(dbApplication);
             });
@@ -67,7 +69,8 @@ module.exports = app => {
         app.delete("/api/applications/:id", (req, res) => {
             db.Application.destroy({
                 where: {
-                    id: req.params.id
+                    id: req.params.id,
+                    userId: req.user.id
                 }
             }).then(dbApplication => {
                 res.json(dbApplication)
