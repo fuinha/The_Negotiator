@@ -4,7 +4,7 @@
 }
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(199, 184, 164);
+    background-color: rgb(114, 100, 82);
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -29,7 +29,7 @@ body {
 .main-nav li a:hover {
     border: 1px solid;
 }
-.row {
+.r2 {
     max-width: 1200px;
     margin: auto;
 }
@@ -61,7 +61,7 @@ h1 {
     background-color: rgb(78, 72, 62);
     border: 4px solid rgb(218, 175, 147);
     width: 700px;
-    margin: 0px 0px 0px 26%;
+    margin: 0px 0px 0px 28%;
 }
 #f1 {
     margin-bottom: 30px;
