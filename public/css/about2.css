@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
     font-family: 'Roboto', sans-serif;
     background-color: rgb(199, 184, 164);
@@ -48,9 +52,60 @@ body {
 .news-card {
     margin-top: 10px;
 }
-.jumbotron {
+#imageJumbotron {
     margin-top: 50px;
+<<<<<<< HEAD:public/css/about2.css
     background-image: linear-gradient(rgba(0, 0, 0, 0.603), rgba(0, 0, 0, 0.603)), url(../img/people8_TOPCROP-2.png);
+=======
+    background-image: linear-gradient(rgba(0, 0, 0, 0.692), rgba(0, 0, 0, 0.692)), url(../assets/images/people8_TOPCROP-2.png);
+>>>>>>> e47e913fd64b0db1d33cad778771a14d1bb07d2c:assets/about2.css
     background-position: center;
     background-size: cover;
+    font-family: 'Gelasio', serif;
+}
+.title {
+    color: rgb(245, 245, 245);
+    font-size: 36px;
+
+}
+.lead {
+    color: rgb(235, 235, 235);
+    font-size: 14px;
+}
+.col-sm-5 {
+    background-color: rgb(224, 224, 224);
+}
+.col-lg-7 {
+    background-color: rgb(224, 224, 224);
+}
+.col {
+    height: 500px;
+}
+
+.news {
+    margin-top: 20px;
+}
+.card-title {
+    border-bottom: solid black 1px;
+}
+.my-md-0 {
+    background-color: black;
+}
+.btn-outline-success {
+    background-color: rgb(255, 255, 255);
+}
+#footer {
+    padding-top: 80px;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px 0px;
+    color: #ffffff;
+    background: grey;
+}
+.foot {
+    font-size: 12px;
 }
