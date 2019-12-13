@@ -6,7 +6,7 @@ var passport = require("./config/passport");
 
 //setting up express app
 const app = express();
-let PORT = process.env.PORT || 9754;
+let PORT = process.env.PORT || 8080;
 
 //importing databases from models
 let db = require("./models");
