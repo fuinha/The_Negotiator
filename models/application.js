@@ -124,12 +124,26 @@ module.exports = (sequelize, DataTypes) => {
             validate : {
                 len : [1]
             }
+        },
+        watching : {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
+        },
+        completed : {
+            type : DataTypes.BOOLEAN, 
+            allowNull : true
         }
     });
 
     Application.associate = models => {
         Application.belongsTo(models.dealer, {
             foreignKey: {
+                allowNull: false
+            }
+        });
+        Application.hasMany(models.Quotes, {
+            onDelete: "Cascade",
+            foreignKey : { 
                 allowNull: false
             }
         });
