@@ -6,7 +6,7 @@ var passport = require("./config/passport");
 
 //setting up express app
 const app = express();
-let PORT = process.env.PORT || 9754;
+let PORT = process.env.PORT || 8080;
 
 //importing databases from models
 let db = require("./models");
@@ -30,7 +30,7 @@ require("./routes/html-routes.js")(app);
 
 //syncing sequelize models and starting express app
 
-db.sequelize.sync({ force: true}).then( function() {
+db.sequelize.sync({}).then( function() {
     app.listen(PORT, function() {
         console.log("==> 🌎 App listening on PORT "+ PORT);
     });
