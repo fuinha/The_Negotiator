@@ -38,5 +38,3 @@ https://user-images.githubusercontent.com/40472408/70741186-bd2c2a00-1ce8-11ea-8
 pages.github.compages.github.com
 GitHub Pages
 Websites for you and your projects, hosted directly from your GitHub repository. Just edit, push, and your changes are live.
-
-
