@@ -70,9 +70,6 @@ module.exports = function(sequelize, DataTypes) {
     constraints: false
   });
 
-  dealer.hasMany(models.Quotes, {
-    onDelete: "Cascade", 
-  });
 };
 
   return dealer;

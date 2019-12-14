@@ -141,12 +141,6 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false
             }
         });
-        Application.hasMany(models.Quotes, {
-            onDelete: "Cascade",
-            foreignKey : { 
-                allowNull: false
-            }
-        });
     }
 
     return Application;
