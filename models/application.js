@@ -124,6 +124,14 @@ module.exports = (sequelize, DataTypes) => {
             validate : {
                 len : [1]
             }
+        },
+        watching : {
+            type: DataTypes.BOOLEAN,
+            allowNull: false
+        },
+        completed : {
+            type : DataTypes.BOOLEAN, 
+            allowNull : true
         }
     });
 

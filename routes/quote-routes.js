@@ -4,54 +4,53 @@ var db = require("../models");
 module.exports = router => {
 
     //get all contacts
-    router.get("/api/quote", (req,res) => {
+    router.get("/api/quotes", (req,res) => {
         db.dealer.findAll({
-            include : [db.Application, db.User]
-        }).then (dbdealer => {
-            res.json(dbdealer);
+            include : [db.Application, db.dealer]
+        }).then (dbQuote => {
+            res.json(dbQuote);
         });
     });
 
     //get contacts by id - primary function in passport attached to login info
-    router.get("/api/contact/:id", (req,res) => {
+    router.get("/api/quotes/:id", (req,res) => {
         console.log(req.user)
         db.dealer.findOne({
             where : {
                 id : req.user.id
-            }, include : [db.Application, db.User]
-        }).then (dbdealer => {
-            res.json(dbdealer);
+            }, include : [db.Application, db.dealer]
+        }).then (dbQuote => {
+            res.json(dbQuote);
         });
     });
 
     //ability to make contact information
-    router.post("/api/contact", (req, res) => {
+    router.post("/api/quotes", (req, res) => {
         console.log(req.body)
         db.dealer.create(req.body).then(dbdealer => {
-            console.log(dbdealer)
-            res.json(dbdealer);
+            res.json(dbQuote);
         });
     });
 
     //ability to change contact information
-    router.put("/api/contact/:id", (req, res)=> {
+    router.put("/api/quotes/:id", (req, res)=> {
         db.dealer.update(req.body, {
             where: {
                 id: req.user.id
             }
-        }).then(dbdealer => {
-            res.json(dbdealer);
+        }).then(dbQuote => {
+            res.json(dbQuote);
         });
     });
 
     //ability to delete contact information
-    router.delete("/api/contact/:id", (req,res) => {
+    router.delete("/api/quotes/:id", (req,res) => {
         db.dealer.destroy({
             where: {
                 id: req.user.id
             }
-        }).then(dbdealer => {
-            res.json(dbdealer)
+        }).then(dbquote => {
+            res.json(dbquote)
         });
     });
 

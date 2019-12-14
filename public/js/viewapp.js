@@ -12,7 +12,7 @@ $(document).ready(function (event) {
 function getid(id) {
   //GET individual app data
   $.get("/api/applications/" + id, data => {
-
+console.log(data)
     //turn the t/f to yes/no
     if (data.furnished == true) {
       furnishing = "yes";

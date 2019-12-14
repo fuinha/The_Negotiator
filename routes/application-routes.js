@@ -54,7 +54,8 @@ module.exports = app => {
             previous_insuranceName: req.body.previous_insuranceName, 
             recent_accidents: req.body.recent_accidents,
             years_inBusiness: req.body.years_inBusiness,
-            dealerId: req.user.id
+            dealerId: req.user.id, 
+            watching : 0
         }).then(dbApplication => {
             res.json(dbApplication);
         });

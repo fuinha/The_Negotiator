@@ -13,6 +13,7 @@ function getid(id) {
       $("#makeApp").attr("data-id", data.id)
       $("#newApp").attr("href", "/application?dealer=" + data.id)
     }
+    console.log(data)
 
 
     var location = (data.state + ' , ' + data.zip)

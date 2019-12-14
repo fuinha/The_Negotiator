@@ -69,6 +69,7 @@ module.exports = function(sequelize, DataTypes) {
     }, onDelete: "Cascade",
     constraints: false
   });
+
 };
 
   return dealer;
