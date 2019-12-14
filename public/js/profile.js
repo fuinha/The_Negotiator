@@ -1,19 +1,16 @@
 $(document).ready(function (event) {
   $(".popApp").hide();
-  var id = window.history.id;
-  getid(id);
-});
 
-function getid(id) {
+  $.get("/api/user_data").then(function(userData) {
+    console.log(userData.id)
 
-
-  $.get("/api/contact/" + id, data => {
-    if (id == data.id) {
+  $.get("/api/contact/" + userData.id, data => {
+    console.log(data)
+    if (userData.id == userData.id) {
       $("#buttonUser").show();
       $("#makeApp").attr("data-id", data.id)
       $("#newApp").attr("href", "/application?dealer=" + data.id)
     }
-    console.log(data)
 
 
     var location = (data.state + ' , ' + data.zip)
@@ -23,7 +20,6 @@ function getid(id) {
     $('#businessLocation').html(location)
     $('#email').html(data.email)
     $('#phoneNumber').html(data.phone_number)
-    console.log(data)
 
     //on click view the apps
     $(".viewApp").on("click", data => {
@@ -43,6 +39,7 @@ function getid(id) {
       $(".popApp").html(appsLoaded)
 
     //load all applications
-    
+
   });
-}
+})
+})

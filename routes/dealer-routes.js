@@ -14,7 +14,7 @@ module.exports = router => {
 
     //get contacts by id - primary function in passport attached to login info
     router.get("/api/contact/:id", (req,res) => {
-        console.log(req.user)
+console.log(req.user.id)
         db.dealer.findOne({
             where : {
                 id : req.user.id

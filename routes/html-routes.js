@@ -13,7 +13,6 @@ module.exports = function(router) {
 
   // 
   router.get("/application", isAuthenticated, function(req,res) {
-    console.log(req.user)
     res.sendFile(path.join(__dirname, "../public/application2.html"))
   });
 
@@ -22,7 +21,6 @@ module.exports = function(router) {
   });
 
   router.get("/profile", isAuthenticated, function(req, res) {
-    console.log(req.user)
     res.sendFile(path.join(__dirname, "../public/profile.html"))
   })
 
@@ -56,6 +54,7 @@ module.exports = function(router) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   router.get("/member", isAuthenticated, function(req, res) {
+
     res.sendFile(path.join(__dirname, "../public/profile2.html"));
   });
 
