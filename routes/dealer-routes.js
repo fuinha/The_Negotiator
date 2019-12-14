@@ -6,7 +6,7 @@ module.exports = router => {
     //get all contacts
     router.get("/api/contact", (req,res) => {
         db.dealer.findAll({
-            include : [db.Application, db.User]
+            include : [db.Application, db.User, db.Clients]
         }).then (dbdealer => {
             res.json(dbdealer);
         });
@@ -18,7 +18,7 @@ console.log(req.user.id)
         db.dealer.findOne({
             where : {
                 id : req.user.id
-            }, include : [db.Application, db.User]
+            }, include : [db.Application, db.User, db.Clients]
         }).then (dbdealer => {
             res.json(dbdealer);
         });

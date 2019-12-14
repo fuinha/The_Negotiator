@@ -141,7 +141,12 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false
             }
         });
-    }
+    Application.hasMany(models.Quotes, {
+        foreignKey: {
+            allowNull: false
+        }
+    }); 
 
+}
     return Application;
 };

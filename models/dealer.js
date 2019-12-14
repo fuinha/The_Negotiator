@@ -70,6 +70,19 @@ module.exports = function(sequelize, DataTypes) {
     constraints: false
   });
 
+  dealer.hasMany(models.Clients, {
+    foreignKey: {
+      allowNull: false
+    }, 
+    onDelete: "Cascade"
+  })
+dealer.hasMany(models.Quotes,{
+  foreignKey: {
+    allowNull : false
+  },
+  onDelete: "Cascade"
+})
+
 };
 
   return dealer;

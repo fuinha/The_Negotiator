@@ -10,7 +10,7 @@ module.exports = app => {
         // }
         db.Application.findAll({
             where: query,
-            include: [db.dealer]
+            include: [db.dealer, db.Quotes]
         }).then(dbApplication => {
             res.json(dbApplication);
         });
@@ -25,7 +25,7 @@ module.exports = app => {
 
             where : {
                 id : req.params.id
-            }, include : [db.dealer]
+            }, include : [db.dealer, db.Quotes]
         }).then (dbdealer => {
             res.json(dbdealer);
         });

@@ -8,10 +8,12 @@ $(document).ready(function (event) {
     console.log(data)
     if (userData.id == userData.id) {
       $("#buttonUser").show();
-      $("#makeApp").attr("data-id", data.id)
       $("#newApp").attr("href", "/application?dealer=" + data.id)
     }
 
+    $.get("/api/quotes", hello => {
+      console.log(hello)
+    })
 
     var location = (data.state + ' , ' + data.zip)
     $('#fullName').html(data.owner)
