@@ -73,6 +73,26 @@ console.log(data)
         window.location.href = "/service";
       });
     });
+  
+
+
+
+
+    
+$("#update").on("click", function() {
+  $.ajax({
+    type: "PUT",
+    url: "api/applications/" + data.id, 
+    data: {
+      id : data.id
+    }
+  }).done(function(){
+    window.location.href = "/view_application?id="+data.id
+  });
+})
+
+
+
 
     })
 }
