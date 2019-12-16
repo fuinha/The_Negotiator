@@ -30,6 +30,10 @@ $(document).ready(function () {
         if (name == "" || address == "" || owner == "" || businessType == ""|| state== "" || email  == "" || zip== ""){
             $("#p").html("Error: form is missing a field")}
 
+        if (img ==="") {
+            img = "http://revivalsportscars.com/wp-content/uploads/2011/05/McLaren-P1-Paris-design-concept-carbon-side-closeup-door.jpg";
+        }
+
         var signUpInfo = {
             business_name: name,
             address: address,

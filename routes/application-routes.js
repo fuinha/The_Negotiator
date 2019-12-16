@@ -18,9 +18,6 @@ module.exports = app => {
 
     //get application by application id
     app.get("/api/applications/:id", (req,res) => {
-        console.log("You are looking at indiv. app.")
-        console.log(req.user)
-        console.log(req)
         db.Application.findOne({
 
             where : {
@@ -62,13 +59,11 @@ module.exports = app => {
 
         //allows update function for member of id
         app.put("/api/applications/:id", (req, res) => {
-            console.log(req.body)
             db.Application.update(
                 req.body, {
                 where: { id: req.params.id,
                 userId: req.user.id }
             }).then(dbApplication => {
-                console.log("Here we go")
                 res.json(dbApplication);
             });
         });
