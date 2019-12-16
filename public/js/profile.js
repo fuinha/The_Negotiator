@@ -21,7 +21,13 @@ $(document).ready(function (event) {
     $('#typeOfBusiness').html(data.agent)
     $('#businessLocation').html(location)
     $('#email').html(data.email)
-    $('#phoneNumber').html(data.phone_number)
+    $('#phoneNumber').html(data.phone_number);
+
+    $("#preferredImg").attr("src", data.image);
+    $(".fa-twitter").attr("href", data.twitter);
+    $(".fa-linkedin").attr("href", data.linkedin);
+    $(".fa-facebook").attr("href", data.facebook);
+    $(".fa-car").attr("href", data.dealer_site);
 
     //on click view the apps
     $(".viewApp").on("click", data => {

@@ -65,4 +65,21 @@ body {
     background-color: goldenrod;
     color: white;
 }
-
+input {
+    width: 70%;
+    margin-bottom: 10px;
+}
+span {
+    margin-left: 50px;
+    padding-bottom: 30px;
+}
+.appPop {
+    position: absolute;
+    width: 90%;
+    background: rgb(189, 167, 143);
+    z-index: 1;
+    padding: 20px 20px 80px 80px;
+}
+p {
+    margin-left: 30%;
+}

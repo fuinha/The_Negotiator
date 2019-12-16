@@ -62,10 +62,11 @@ module.exports = app => {
 
         //allows update function for member of id
         app.put("/api/applications/:id", (req, res) => {
+            console.log(req.body)
             db.Application.update(
                 req.body, {
                 where: { id: req.params.id,
-                dealerId: req.user.id }
+                userId: req.user.id }
             }).then(dbApplication => {
                 console.log("Here we go")
                 res.json(dbApplication);
