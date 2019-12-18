@@ -6,8 +6,9 @@ module.exports = app => {
     app.get("/api/quotes", (req, res) => {
         var query = {};
         db.Quotes.findAll({
-            where: query,
-            include: [db.dealer, db.Application, db.Client]
+            where: {
+                id: req.user.id
+            }
         }).then(dbQuotes => {
             res.json(dbQuotes);
         });
@@ -17,7 +18,9 @@ module.exports = app => {
     app.get("/api/quotes/:id", (req, res) => {
         db.Quotes.findOne({
             where: {
-                id: req.user.id
+                dealerId: req.user.id,
+                ApplicationId: req.body.Application.id,
+                id: req.params.id
             }, include: [db.dealer, db.Application, db.Client]
         }).then(dbQuotes => {
             res.json(dbQuotes);
@@ -35,7 +38,7 @@ module.exports = app => {
         app.put("/api/quotes/:id", (req, res) => {
             db.Quotes.update({
                 where: {
-                    UserId: req.user.id,
+                    dealerId: req.user.id,
                     id: req.params.id
                 }
             })
@@ -58,8 +61,9 @@ module.exports = app => {
     app.get("/api/clients/:id", (req, res) => {
         db.Clients.findOne({
             where: {
-                id: req.user.id,
-                ApplicationId: req.params.clientsId
+                dealerId: req.user.id,
+                ApplicationId: req.body.ApplicationId
+
             }, include: [db.dealer, db.Application, db.Client]
         }).then(dbQuotes => {
             res.json(dbQuotes);
@@ -69,7 +73,11 @@ module.exports = app => {
     //post quotes
     app.post("/api/clients", (req, res) => {
         //created object for quote
-        db.Clients.create(req.body).then(dbApplication => {
+        db.Clients.create(req.body, {
+            where: {
+                dealerId : req.user.id
+            }
+        }).then(dbApplication => {
             res.json(dbQuotes);
         });
 
@@ -77,7 +85,7 @@ module.exports = app => {
         app.put("/api/clients/:id", (req, res) => {
             db.Clients.update({
                 where: {
-                    UserId: req.user.id,
+                    dealerId: req.user.id,
                     id: req.params.id
                 }
             })
@@ -87,7 +95,7 @@ module.exports = app => {
         app.delete("/api/clients/:id", (req, res) => {
             db.Clients.destroy({
                 where: {
-                    UserId: req.user.id,
+                    dealerId: req.user.id,
                     id: req.params.id
                 }
             }).then(dbQuotes => {

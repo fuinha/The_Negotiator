@@ -6,11 +6,13 @@ $(document).ready(function (event) {
   $.get("/api/contact/" + userData.id, data => {
     if (userData.id == userData.id) {
       $("#buttonUser").show();
-      $("#newApp").attr("href", "/application?dealer=" + data.id)
+      $("#newApp").attr("href", "/application?dealer=" + userData.id)
     }
 
     $.get("/api/quotes", hello => {
     })
+    console.log(data)
+    
 
     var location = (data.state + ' , ' + data.zip)
     $('#fullName').html(data.owner)

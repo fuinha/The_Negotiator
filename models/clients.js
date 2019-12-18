@@ -2,17 +2,18 @@ module.exports = (sequelize, DataTypes) => {
     var Clients = sequelize.define("Clients", {
         waiting:{
             type: DataTypes.BOOLEAN, 
-            allowNull: true, 
-            validate: {
-                len: [1, 250]
-            }
+            allowNull: false, 
+            defaultValue: 0
         }, 
         completed:{
             type: DataTypes.BOOLEAN, 
-            allowNull: true, 
-            validate: {
-                len: [1, 250]
-            }
+            allowNull: false, 
+            defaultValue: 0
+        }, 
+        skipApp:{
+            type:DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: 0
         }
     }); 
 
@@ -22,11 +23,11 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false
             }
         });
-        Clients.hasOne(models.Quotes, {
+        Clients.hasMany(models.Quotes, {
             foreignKey: {
                 allowNull: false
             }, constraints: false
-        })
+        });
     }
 
     return Clients;

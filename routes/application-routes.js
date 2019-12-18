@@ -61,8 +61,8 @@ module.exports = app => {
         app.put("/api/applications/:id", (req, res) => {
             db.Application.update(
                 req.body, {
-                where: { id: req.params.id,
-                userId: req.user.id }
+                where: { id: req.params.id, 
+                    dealerId : req.user.id}
             }).then(dbApplication => {
                 res.json(dbApplication);
             });

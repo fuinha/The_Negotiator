@@ -47,6 +47,7 @@ body {
     text-align: center;
     cursor: pointer;
     margin:5px;
+    float: left;
 }
 .appBox:hover {
     width: 310px;
@@ -78,7 +79,8 @@ span {
     width: 90%;
     background: rgb(189, 167, 143);
     z-index: 1;
-    padding: 20px 20px 80px 80px;
+    margin-top: 80px;
+    padding: 20px 20px 200px 80px;
 }
 p {
     margin-left: 30%;

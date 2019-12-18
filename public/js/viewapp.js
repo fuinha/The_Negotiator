@@ -1,5 +1,6 @@
 $(document).ready(function (event) {
   $(".appPop").hide();
+  $(".btnHome").hide();
 
   var url = window.location.search;
 
@@ -13,7 +14,6 @@ $(document).ready(function (event) {
 function getid(id) {
   //GET individual app data
   $.get("/api/applications/" + id, data => {
-    console.log(data)
     //turn the t/f to yes/no
     if (data.furnished == true) {
       furnishing = "yes";
@@ -58,6 +58,12 @@ function getid(id) {
 
     $(".appBody").html(newDiv);
 
+    $.get("api/user_data", userData =>{
+      if (userData.id === data.dealer.id){
+        $(".btnHome").show();
+      }
+    })
+
     //allows Deletion of Application for user only
     $("#delete").on("click", function () {
       $.ajax({
@@ -90,10 +96,6 @@ function getid(id) {
       '<input type="text" id="license" value="' + data.drivers_license + '"><br>' +
       '<label for="dob">Date of Birth:</label><br>' +
       '<input type="text" id="dob" value="' + data.dob_employees + '"><br>' +
-      '<label for="furnished">Do You Drive the Vehicles for Personal Use?</label><br>' +
-      '<input type="text" id="furnished" value="' + furnishing + '"><br>' +
-      '<label for="accidents">Any Accidents in the Last Three Years</label><br>' +
-      '<input type="text" id="accidents" value="' + accidents + '"></div><br><br>' +
 
       '<div class="insuranceCorrect"><p>Insurance Information</p><label for="insurance">Type of Insurance Requesting: </label><br><input type="text" id="insurance" value="' + data.insurance_type + '"><br>' +
       '<label for="miles">Miles Driving Cars to Lot:</label><br>' +
@@ -107,12 +109,15 @@ function getid(id) {
       '<label for="plates">Number of Dealership Plates</label><br>' +
       '<input type="text" id="plates" value="' + data.num_plates + '"><br>' +
       '<label for="security">Lot Protection</label><br>' +
-      '<input type="text" id="security" value="' + data.lot_protection + '"></div><br><br><button class="btnApp" id="submitEdits">Submit Edits</button>';
+      '<input type="text" id="security" value="' + data.lot_protection + '"></div><br><br><button class="btnApp" id="submitEdits">Submit Edits</button><button class="btnApp" id="close">Close Edits</button>';
 
 
     $(".appPop").html(stuff)
     $("#edit").on("click", onClick => {
       $(".appPop").show();
+    })
+    $("#close").on("click", function() {
+      $(".appPop").hide();
     })
 
     $("#submitEdits").on("click", click => {
@@ -155,18 +160,17 @@ function getid(id) {
         miles_driven: miles,
         num_lotCars: lot,
         lot_worth: worth,
-        num_plates: plates
+        num_plates: plates,
+        id: data.id
       }
-      console.log(editApp)
 
 
-      $("#update").on("click", function () {
+      $("#submitEdits").on("click", function () {
         $.ajax({
-          type: "PUT",
+          method: "PUT",
           url: "api/applications/" + data.id,
           data: editApp
         }).done(function () {
-          alert("You are now here")
           window.location.href = "/view_application?id=" + data.id
         });
       });
