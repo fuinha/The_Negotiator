@@ -6,7 +6,7 @@ module.exports = router => {
     //get all contacts
     router.get("/api/contact", (req,res) => {
         db.dealer.findAll({
-            include : [db.Application, db.User]
+            include : [db.Application, db.Clients]
         }).then (dbdealer => {
             res.json(dbdealer);
         });
@@ -14,11 +14,10 @@ module.exports = router => {
 
     //get contacts by id - primary function in passport attached to login info
     router.get("/api/contact/:id", (req,res) => {
-console.log(req.user.id)
         db.dealer.findOne({
             where : {
                 id : req.user.id
-            }, include : [db.Application, db.User]
+            }, include : [db.Application, db.Clients]
         }).then (dbdealer => {
             res.json(dbdealer);
         });
@@ -26,9 +25,7 @@ console.log(req.user.id)
 
     //ability to make contact information
     router.post("/api/contact", (req, res) => {
-        console.log(req.body)
         db.dealer.create(req.body).then(dbdealer => {
-            console.log(dbdealer)
             res.json(dbdealer);
         });
     });

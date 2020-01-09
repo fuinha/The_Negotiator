@@ -10,7 +10,7 @@ module.exports = app => {
         // }
         db.Application.findAll({
             where: query,
-            include: [db.dealer]
+            include: [db.dealer, db.Quotes]
         }).then(dbApplication => {
             res.json(dbApplication);
         });
@@ -18,14 +18,11 @@ module.exports = app => {
 
     //get application by application id
     app.get("/api/applications/:id", (req,res) => {
-        console.log("You are looking at indiv. app.")
-        console.log(req.user)
-        console.log(req)
         db.Application.findOne({
 
             where : {
                 id : req.params.id
-            }, include : [db.dealer]
+            }, include : [db.dealer, db.Quotes]
         }).then (dbdealer => {
             res.json(dbdealer);
         });
@@ -64,10 +61,9 @@ module.exports = app => {
         app.put("/api/applications/:id", (req, res) => {
             db.Application.update(
                 req.body, {
-                where: { id: req.params.id,
-                dealerId: req.user.id }
+                where: { id: req.params.id, 
+                    dealerId : req.user.id}
             }).then(dbApplication => {
-                console.log("Here we go")
                 res.json(dbApplication);
             });
         });

@@ -2,16 +2,17 @@ $(document).ready(function (event) {
   $(".popApp").hide();
 
   $.get("/api/user_data").then(function(userData) {
-    console.log(userData.id)
 
   $.get("/api/contact/" + userData.id, data => {
-    console.log(data)
     if (userData.id == userData.id) {
       $("#buttonUser").show();
-      $("#makeApp").attr("data-id", data.id)
-      $("#newApp").attr("href", "/application?dealer=" + data.id)
+      $("#newApp").attr("href", "/application?dealer=" + userData.id)
     }
 
+    $.get("/api/quotes", hello => {
+    })
+    console.log(data)
+    
 
     var location = (data.state + ' , ' + data.zip)
     $('#fullName').html(data.owner)
@@ -19,7 +20,16 @@ $(document).ready(function (event) {
     $('#typeOfBusiness').html(data.agent)
     $('#businessLocation').html(location)
     $('#email').html(data.email)
-    $('#phoneNumber').html(data.phone_number)
+    $('#phoneNumber').html(data.phone_number);
+
+    if (data.image ==""){
+      $("#preferredImg").attr("src", "http://revivalsportscars.com/wp-content/uploads/2011/05/McLaren-P1-Paris-design-concept-carbon-side-closeup-door.jpg");
+    }
+    $("#preferredImg").attr("src", data.image);
+    $(".fa-twitter").attr("href", data.twitter);
+    $(".fa-linkedin").attr("href", data.linkedin);
+    $(".fa-facebook").attr("href", data.facebook);
+    $(".fa-car").attr("href", data.dealer_site);
 
     //on click view the apps
     $(".viewApp").on("click", data => {
@@ -38,7 +48,6 @@ $(document).ready(function (event) {
       }
       $(".popApp").html(appsLoaded)
 
-    //load all applications
 
   });
 })
