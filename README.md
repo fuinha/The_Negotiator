@@ -1,6 +1,6 @@
 #  The Negotiator
 
-![image](https://user-images.githubusercontent.com/40472408/70683408-4ce1c200-1c70-11ea-9b09-94184ca9f1f7.png)
+![image](https://user-images.githubusercontent.com/40472408/74196119-9461db80-4c2a-11ea-95b5-b31b7f0c6dc7.png)
 
 
 ## :computer: Developers
