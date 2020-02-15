@@ -51,3 +51,17 @@
       - MySQL Workbench is a visual database design tool that integrates SQL development, administration, database design, creation and maintenance into a single integrated development environment for the MySQL database system.
       
       ![image](https://user-images.githubusercontent.com/40472408/70741186-bd2c2a00-1ce8-11ea-8ea3-c2aece44f7a2.png)
+      
+ # Deploying Project
+ In order to deploy this project locally be sure to: 
+ - fork the repository and clone it to local computer. 
+ - go into the local file and open the terminal.
+ - type "npm install" inside the terminal to download the node_modules
+ - you must have mySQL located on your computer. You will need to open up a new project. 
+ - in mySQL type: 
+        CREATE DATABASE negotiator;
+        USE negotiator;
+ - now go back to terminal and type in "npm start"
+ - navigate to the correct port labeled in the terminal. Now go to the localhost: PORT that was in the terminal. 
+ 
+ This should include a completion of the directions to run this file locally!
